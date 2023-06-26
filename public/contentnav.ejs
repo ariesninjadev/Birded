@@ -1,0 +1,151 @@
+<header class="navbar-expand-md">
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <div class="navbar navbar-light">
+            <div class="container-xl">
+              <ul class="navbar-nav">
+                <li class="nav-item <% if (active == 0) { %>active<% } %>">
+                  <a class="nav-link" href="/game" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-gamepad-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z"></path>
+   <path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232"></path>
+   <path d="M8 9v2"></path>
+   <path d="M7 10h2"></path>
+   <path d="M14 10h2"></path>
+</svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Play
+                    </span>
+                  </a>
+                </li>
+                <li class="nav-item <% if (active == 1) { %>active<% } %>">
+                  <a class="nav-link" href="/game/chat" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4"></path>
+   <path d="M12 11l0 .01"></path>
+   <path d="M8 11l0 .01"></path>
+   <path d="M16 11l0 .01"></path>
+</svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Chat
+                    </span>
+                  </a>
+                </li>
+                <li class="nav-item <% if (active == 2) { %>active<% } %>">
+                  <a class="nav-link" href="#" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/ghost -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bar" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+   <path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+   <path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+   <path d="M4 20l14 0"></path>
+</svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Stats
+                    </span>
+                  </a>
+                </li>
+                <li class="nav-item <% if (active == 3) { %>active<% } %>">
+                  <a class="nav-link" href="#" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/ghost -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-bag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z"></path>
+   <path d="M9 11v-5a3 3 0 0 1 6 0v5"></path>
+</svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Store
+                    </span>
+                  </a>
+                </li>
+                <li class="nav-item dropdown <% if (active == 4) { %>active<% } %>">
+                  <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/lifebuoy -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+   <path d="M12 16v.01"></path>
+   <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483"></path>
+</svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Help
+                    </span>
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">
+                      Documentation
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      Changelog
+                    </a>
+                    <a class="dropdown-item" href="#" target="_blank" rel="noopener">
+                      Source code
+                    </a>
+                    <a class="dropdown-item text-pink" href="https://paypal.me/ninjamstudios" target="_blank" rel="noopener">
+                      <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline me-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
+                      Sponsor project!
+                    </a>
+                  </div>
+                </li>
+                <% if (settings == 1) { %>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/ghost -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+   <path d="M6 4v4"></path>
+   <path d="M6 12v8"></path>
+   <path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+   <path d="M12 4v10"></path>
+   <path d="M12 18v2"></path>
+   <path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+   <path d="M18 4v1"></path>
+   <path d="M18 9v11"></path>
+</svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Settings
+                    </span>
+                  </a>
+                </li>
+                  <% } %>
+                <li class="nav-item <% if (active == 5) { %>active<% } %>">
+                  <a id="adminbutton" class="hiddenelem nav-link" href="/admin" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/ghost -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shield-checkered-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#F63D48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M11.013 12v9.754a13 13 0 0 1 -8.733 -9.754h8.734zm9.284 3.794a13 13 0 0 1 -7.283 5.951l-.001 -9.745h8.708a12.96 12.96 0 0 1 -1.424 3.794zm-9.283 -13.268l-.001 7.474h-8.986c-.068 -1.432 .101 -2.88 .514 -4.282a1 1 0 0 1 1.005 -.717a11 11 0 0 0 7.192 -2.256l.276 -.219zm1.999 7.474v-7.453l-.09 -.073a11 11 0 0 0 7.189 2.537l.342 -.01a1 1 0 0 1 1.005 .717c.413 1.403 .582 2.85 .514 4.282h-8.96z" stroke-width="0" fill="#F63D48"></path>
+</svg>
+                    </span>
+                    <span class="nav-link-title" style="color:#F63D48;">
+                      Admin
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
+                <form action="https://birded.tech/game/" method="get" autocomplete="off" novalidate>
+                  <div class="input-icon">
+                    <span class="input-icon-addon">
+                      <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                    </span>
+                    <input type="text" value="" class="form-control" placeholder="Search…" aria-label="Search in website">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>

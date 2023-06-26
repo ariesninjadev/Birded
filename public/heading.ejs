@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+  <link href="/notifstyle.css" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <script src="/jquery.min.js"></script>
+    <script src="/foundation.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Birded | <%= title %></title>
+    <meta name="msapplication-TileColor" content=""/>
+    <meta name="theme-color" content=""/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="MobileOptimized" content="320"/>
+    <link rel="icon" href="/favi.ico" type="image/x-icon"/>
+    <meta name="description" content="Preregister today at birded.tech!"/>
+    <meta name="twitter:image:src" content="https://birded.tech/game/static/sponsor.png">
+    <meta name="twitter:site" content="@birdedofficial">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Birded | An immersive text-based adventure.">
+    <meta name="twitter:description" content="Preregister today at birded.tech!">
+    <meta property="og:image" content="https://birded.tech/game/static/sponsor.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta property="og:site_name" content="Birded - The Game">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="Birded | An immersive text-based adventure.">
+    <meta property="og:url" content="https://birded.tech/game/static/sponsor.png">
+    <meta property="og:description" content="Preregister today at birded.tech!">
+    <!-- CSS files -->
+    <link href="/game/dist/css/tabler.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/game/dist/css/tabler-flags.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/game/dist/css/tabler-payments.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/game/dist/css/tabler-vendors.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/game/dist/css/demo.min66d9.css?1674944800" rel="stylesheet"/>
+ 
+  </head>
+  
+  <style>
+.hiddenelem {
+  display: none;
+}
+    
+.circle, #bird .eye, .quarter, #bird .lowerLip, #bird .upperLip, #bird .cheek, .half, #bird .face, #bird .crest {
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.half, #bird .face, #bird .crest {
+  background-size: 50% 100%;
+}
+
+.quarter, #bird .lowerLip, #bird .upperLip, #bird .cheek {
+  background-size: 50% 50%;
+}
+
+    #bird {
+  width: 20em;
+  height: 20em;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 1s;
+}
+#bird > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+#bird .crest {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #a12a15, #a12a15);
+  animation: crest 2300ms infinite linear;
+}
+@keyframes crest {
+  0% {
+    transform: rotate(0deg);
+  }
+  25%, 50% {
+    transform: rotate(180deg);
+  }
+  75%, 100% {
+    transform: rotate(360deg);
+  }
+}
+#bird .face {
+  width: 65%;
+  height: 65%;
+  background-image: linear-gradient(to right, #FFF2FF, #FFF2FF);
+  animation: face 2300ms infinite linear;
+}
+@keyframes face {
+  0% {
+    transform: rotate(0deg);
+  }
+  25%, 50% {
+    transform: rotate(-180deg);
+  }
+  75%, 100% {
+    transform: rotate(-360deg);
+  }
+}
+#bird .cheek {
+  width: 65%;
+  height: 65%;
+  background-image: linear-gradient(to right, #E7E7E7, #E7E7E7);
+  animation: cheek 2300ms infinite linear;
+}
+@keyframes cheek {
+  0% {
+    transform: rotate(-90deg);
+  }
+  25%, 50% {
+    transform: rotate(-180deg);
+  }
+  75%, 100% {
+    transform: rotate(-450deg);
+  }
+}
+#bird .upperLip {
+  width: 65%;
+  height: 65%;
+  background-image: linear-gradient(to right, #F7CE42, #F7CE42);
+  animation: upperLip 2300ms infinite linear;
+}
+@keyframes upperLip {
+  0% {
+    transform: rotate(90deg);
+  }
+  25%, 50% {
+    transform: rotate(0deg);
+  }
+  75%, 100% {
+    transform: rotate(90deg);
+  }
+}
+#bird .lowerLip {
+  width: 35%;
+  height: 35%;
+  background-image: linear-gradient(to right, #F7A500, #F7A500);
+  animation: lowerLip 2300ms infinite linear;
+}
+@keyframes lowerLip {
+  0% {
+    transform: rotate(180deg);
+  }
+  25%, 50% {
+    transform: rotate(270deg);
+  }
+  75%, 100% {
+    transform: rotate(180deg);
+  }
+}
+#bird .eye {
+  width: 15%;
+  height: 15%;
+  background-color: #18233e;
+  transform: translate(-60%, -60%);
+  animation: eye 2300ms infinite linear;
+}
+@keyframes eye {
+  0% {
+    transform: translate(-60%, -60%);
+  }
+  25%, 50% {
+    transform: translate(60%, -60%);
+  }
+  75%, 100% {
+    transform: translate(-60%, -60%);
+  }
+}
+    
+    .overlayi {
+  background-color: rgba(100, 100, 100, 0);  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  filter: blur(0px);
+}
+
+  
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+  body {display:flex;width:100%;}
+
+  .blurlocal {
+    filter: blur(40px);
+  }
+
+  .unblurtype {
+    animation: unblur 0.2s ease-in-out forwards;
+  }
+
+@keyframes unblur {
+  from {
+    filter: blur(40px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top:7px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #206bc4;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+  </style>
+  <div id="overlayi" class="overlayi">
+    
+    
+    
+    <div class="center">
+      
+      <h2 id="loadingtext" style="color:white;-webkit-filter: invert(100%);filter: invert(100%);margin-bottom:20px;">Loading...</h2>
+      
+      <div id="bird">
+
+  <div class="lowerLip"></div>
+
+  <div class="crest"></div>
+
+  <div class="face"></div>
+ 
+  <div class="cheek"></div>
+
+  <div class="eye"></div>
+
+  <div class="upperLip"></div></div></div></div>
+  <body class="bodylocal">
+    
+    <div id="unblurobj" class="page blurlocal" style="width:100%;">
+      <div id="alertbar"></div>
+      <!-- Navbar -->
+      <header class="navbar navbar-expand-md navbar-light d-print-none">
+        <div class="container-xl">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+            <a href="#">
+              <img src="/game/static/logo.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+            </a>
+          </h1>
+          <div class="navbar-nav flex-row order-md-last">
+            <div class="nav-item d-none d-md-flex me-3">
+              <div class="btn-list">
+              
+                <a href="https://paypal.me/ninjamstudios" class="btn" target="_blank" rel="noreferrer">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon text-pink" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
+                  Sponsor
+                </a>
+              </div>
+            </div>
+            <div class="d-none d-md-flex">
+              <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip"
+		   data-bs-placement="bottom">
+                <!-- Download SVG icon from http://tabler-icons.io/i/moon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>
+              </a>
+              <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip"
+		   data-bs-placement="bottom">
+                <!-- Download SVG icon from http://tabler-icons.io/i/sun -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>
+              </a>
+              <div class="nav-item dropdown d-none d-md-flex me-3">
+                <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Show notifications">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/bell -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                  <span class="badge bg-red"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">Last updates</h3>
+                    </div>
+                    <div class="list-group list-group-flush list-group-hoverable">
+                      <div class="list-group-item">
+                        <div class="row align-items-center">
+                          <div class="col-auto"><span class="status-dot status-dot-animated bg-red d-block"></span></div>
+                          <div class="col text-truncate">
+                            <a href="#" class="text-body d-block">Welcome to Birded!</a>
+                            <div class="d-block text-muted mt-n1">
+                              ------------------------------------
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <a href="#" class="list-group-item-actions">
+                              <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                              <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+                <span id="playerimage_holder" class="avatar avatar-sm" style="background-image: url('static/avatars/avatar.png')"></span>
+                <div id="userblocki" class="d-xl-block ps-2">
+                  <div id="playername_holder">_name_</div>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <a href="#" class="dropdown-item">Status</a>
+                <a href="javascript:openProfile()" class="dropdown-item">Profile</a>
+                <a href="#" class="dropdown-item">Feedback</a>
+                <div class="dropdown-divider"></div>
+                <a href="/game/settings" class="dropdown-item">Settings</a>
+                <a href="javascript:logoutF()" class="dropdown-item">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>

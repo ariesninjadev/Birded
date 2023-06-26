@@ -1,0 +1,342 @@
+<%- include(origin + '/public/heading', { title: 'Unknown' }); %>
+<%- include(origin + '/public/contentnav',{'active':5,'settings':0}); %>
+      <div class="page-wrapper">
+        <!-- Page header -->
+        <div class="page-header d-print-none">
+          <div class="container-xl">
+            <div class="row g-2 align-items-center">
+              <div class="col">
+                <!-- Page pre-title -->
+                <div class="page-pretitle">
+                  Viewing:
+                </div>
+                <h2 class="page-title">
+                  User Profile
+                </h2>
+              </div>
+              <!-- Page title actions -->
+              <div class="col-auto ms-auto d-print-none">
+                <div class="btn-list">
+
+                  <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Page body -->
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="col-lg-12">
+                <div class="card">
+                  
+                  <div class="row row-0">
+                    <div class="col">
+                      <div class="card-body">
+                        <h1 class="title">Unknown Player</h1>
+                        <p class="text-muted">The username you entered doesn't exist on BRD:000.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <footer class="footer footer-transparent d-print-none">
+          <div class="container-xl">
+            <div class="row text-center align-items-center flex-row-reverse">
+              <div class="col-lg-auto ms-lg-auto">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item"><a href="#" class="link-secondary">Documentation</a></li>
+                  <li class="list-inline-item"><a href="/tos" class="link-secondary">Terms of Service</a></li>
+                  <li class="list-inline-item"><a href="" target="_blank" class="link-secondary" rel="noopener">Source code</a></li>
+                  <li class="list-inline-item">
+                    <a href="https://paypal.me/ninjamstudios" target="_blank" class="link-secondary" rel="noopener">
+                      <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon text-pink icon-filled icon-inline" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
+                      Sponsor
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item">
+                    Copyright &copy; 2023
+                    <a href="#" class="link-secondary">Ninjam Studios</a>.
+                    All rights reserved.
+                  </li>
+                  <li class="list-inline-item">
+                    <a id="version" href="/changelog" class="link-secondary" rel="noopener">
+                      ---------------------------
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New report</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="example-text-input" placeholder="Your report name">
+            </div>
+            <label class="form-label">Report type</label>
+            <div class="form-selectgroup-boxes row mb-3">
+              <div class="col-lg-6">
+                <label class="form-selectgroup-item">
+                  <input type="radio" name="report-type" value="1" class="form-selectgroup-input" checked>
+                  <span class="form-selectgroup-label d-flex align-items-center p-3">
+                    <span class="me-3">
+                      <span class="form-selectgroup-check"></span>
+                    </span>
+                    <span class="form-selectgroup-label-content">
+                      <span class="form-selectgroup-title strong mb-1">Report a Player</span>
+                      <span class="d-block text-muted">Is someone breaking the rules? Being offensive?</span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label class="form-selectgroup-item">
+                  <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
+                  <span class="form-selectgroup-label d-flex align-items-center p-3">
+                    <span class="me-3">
+                      <span class="form-selectgroup-check"></span>
+                    </span>
+                    <span class="form-selectgroup-label-content">
+                      <span class="form-selectgroup-title strong mb-1">Suggest a Change</span>
+                      <span class="d-block text-muted">Found a bug? Have a cool idea? Want to suggest a change?</span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="mb-3">
+                  <label class="form-label">Report url</label>
+                  <div class="input-group input-group-flat">
+                    <span class="input-group-text">
+                      https://bird.ed/reports/
+                    </span>
+                    <input type="text" class="form-control ps-0" style="color:black;" value="REPORT_NAME" autocomplete="off">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="mb-3">
+                  <label class="form-label">Visibility</label>
+                  <select class="form-select">
+                    <option value="1" selected>Private</option>
+                    <option value="2">Public</option>
+                    <option value="3">Hidden</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Your name</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Report Date/Occurence</label>
+                  <input type="date" class="form-control">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div>
+                  <label class="form-label">Additional information</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+              Cancel
+            </a>
+            <a href="#" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
+              <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+              Create new report
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Libs JS -->
+    <script src="/game/dist/libs/apexcharts/dist/apexcharts.min66d9.js?1674944800" defer></script>
+    <script src="/game/dist/libs/jsvectormap/dist/js/jsvectormap.min66d9.js?1674944800" defer></script>
+    <script src="/game/dist/libs/jsvectormap/dist/maps/world66d9.js?1674944800" defer></script>
+    <script src="/game/dist/libs/jsvectormap/dist/maps/world-merc66d9.js?1674944800" defer></script>
+    <!-- Tabler Core -->
+    <script src="/game/dist/js/tabler.min66d9.js?1674944800" defer></script>
+    <script src="/game/dist/js/demo.min66d9.js?1674944800" defer></script>
+
+    <script src="/notification.js"></script>
+<script src="/socket.io.min.js"></script>
+<script>
+  var socket = io();
+  var loadPlayer
+
+  
+function custom_alert( message, title ) {
+    if ( !title )
+        title = 'Alert';
+
+    if ( !message )
+        message = 'No Message to Display.';
+
+    $('<div></div>').html( message ).dialog({
+        title: title,
+        resizable: false,
+        modal: true,
+        buttons: {
+            'Ok': function()  {
+                $( this ).dialog( 'close' );
+            }
+        }
+    });
+}
+
+
+  
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+// ------------------------------------------ //
+
+const x = getCookie('session_id');
+const y = getCookie('access_id');
+var grant = 1
+
+alertify.set({ delay: 1700 });
+
+const codes = "14708605"
+
+function chk() {
+  if (codes.split(",").indexOf(y) !== -1) {
+    
+      grant = 1;
+    
+  }
+}
+
+  chk()
+
+function logoutF() {
+  eraseCookie('session_id')
+  eraseCookie('access_id')
+  window.location.href = "/login"
+}
+
+function openProfile() {
+  window.location.href = "/game/profile/" + loadPlayer.account.playername
+}
+
+socket.emit("verifyId", x);
+
+socket.on('verifyIdResult', (allowed) => {
+  if (allowed == 1) {
+    //alertify.info("Logged In!",1000);
+    socket.emit("grabStatics", x,"1");
+  } else {
+    eraseCookie(y)
+    window.location.href = "/login";
+  }
+});
+
+socket.on('websiteStatics', (main) => {
+  document.getElementById("version").innerText = main[0]
+});
+
+socket.on('grabStaticsResult', (allowed,onl) => {
+  if (onl == 0) {
+    document.getElementById("loadingtext").innerText = allowed
+    alertify.error(allowed,5000);
+  }
+  loadPlayer = allowed;
+
+  if (loadPlayer.account.op <= 1) {
+    history.back();
+    window.location.href = "/";
+  }
+
+  if (loadPlayer.account.status == -1) {
+    document.getElementById("loadingtext").innerText = "You are banned from Birded."
+    alertify.error("You have been permanently banned from Birded.",20000);
+    alertify.error("Please contact official@birded.tech if you have questions or concerns regarding your ban.",20500);
+    loadPlayer = ""
+  }
+  
+  document.getElementById("playername_holder").innerText = loadPlayer.account.playername;
+  if (loadPlayer.account.icon == "none") {
+    document.getElementById("playerimage_holder").style.backgroundImage = "url('/game/static/avatars/avatar.png')"
+  } else {
+    document.getElementById("playerimage_holder").style.backgroundImage = "url('" + loadPlayer.account.icon + "')"
+  }
+  if (loadPlayer.account.op == 3) {
+    document.getElementById("adminbutton").classList.remove("hiddenelem");
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#EB3838;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">DEVELOPER</div>`;
+  } else if (loadPlayer.account.op == 2) {
+    document.getElementById("adminbutton").classList.remove("hiddenelem");
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#E87676;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">ADMIN</div>`;
+  } else if (loadPlayer.account.op == 1) {
+    document.getElementById("adminbutton").classList.remove("hiddenelem");
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#C98FDE;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">MOD</div>`;
+  } else if (loadPlayer.game.rank == 3) {
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#F2B236;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">CLAW</div>`;
+  } else if (loadPlayer.game.rank == 2) {
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#E5C53F;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">TALON</div>`;
+  } else if (loadPlayer.game.rank == 1) {
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#D1D567;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">FEATHER</div>`;
+  } else if (loadPlayer.game.rank == 0) {
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:gray;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">PLAYER</div>`
+  }
+  document.getElementById("overlayi").remove();
+  var mcobj = document.getElementById("unblurobj")
+  mcobj.classList.add("unblurtype");
+});
+</script>
+  </body>
+</html>

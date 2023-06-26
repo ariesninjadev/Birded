@@ -1,0 +1,559 @@
+<%- include(origin + '/public/heading',{'title':'Chat'}); %>
+<%- include(origin + '/public/contentnav',{'active':1,'settings':0}); %>
+  <style>
+    .global-pre {
+      height:50vh;
+      overflow:auto;
+      white-space: pre-wrap;
+      font-size: 1.3em;
+    }
+    .global-pre::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: bottom;
+      }
+    
+  </style>
+      <div class="page-wrapper">
+        <!-- Page header -->
+        <div class="page-header d-print-none">
+          <div class="container-xl">
+            <div class="row g-2 align-items-center">
+              <div class="col">
+                <!-- Page pre-title -->
+                <div class="page-pretitle">
+                  Game is
+                </div>
+                <h2 class="page-title">
+                  Under Construction
+                </h2>
+              </div>
+              <!-- Page title actions -->
+              <div class="col-auto ms-auto d-print-none">
+                <div class="btn-list">
+                  
+                  
+                  <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Page body -->
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="row row-cards">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs">
+                      <li class="nav-item">
+                        <a href="#tabs-home-9" class="nav-link active" data-bs-toggle="tab"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                          Global</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#tabs-profile-9" class="nav-link" data-bs-toggle="tab"><!-- Download SVG icon from http://tabler-icons.io/i/user -->
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+                          Team</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#tabs-add-9" onclick="addchat();" class="nav-link" data-bs-toggle="tab"><!-- Download SVG icon from http://tabler-icons.io/i/user -->
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 5l0 14"></path>
+   <path d="M5 12l14 0"></path>
+</svg>
+                          </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <div class="tab-content">
+                      <div class="tab-pane active show" id="tabs-home-9">
+<pre id="globalcontainer" class='global-pre'></pre><div class="input-group input-group-flat">
+                              <input id="gmessageinput" type="text" class="form-control"  autocomplete="off">
+                              <span id="gcb1a" class="input-group-text">
+                                <a id="gcb1" href="#" class="link-secondary" title="Gift" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/x -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-gift" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z"></path>
+   <path d="M12 8l0 13"></path>
+   <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"></path>
+   <path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5"></path>
+</svg>
+                                </a>
+                                <a id="gcb2" href="#" class="link-secondary ms-2" title="Preferences" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/adjustments -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M6 4l0 4" /><path d="M6 12l0 8" /><path d="M12 16m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M12 4l0 10" /><path d="M12 18l0 2" /><path d="M18 7m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M18 4l0 1" /><path d="M18 9l0 11" /></svg>
+                                </a>
+                                <a id="gcb3" href="javascript:sendg()" class="link-secondary ms-2" title="Send" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/bell -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M10 14l11 -11"></path>
+   <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"></path>
+</svg>
+                                </a>
+                              </span>
+                            </div>
+                      </div>
+                      <div class="tab-pane" id="tabs-profile-9">
+                        <h4>You are not in a team!</h4>
+                      </div>
+                      <div class="tab-pane" id="tabs-add-9">
+                      <input id="usersearchbar" type="text" value="" class="form-control" placeholder="Search…" aria-label="Search in website"><br>
+                      <div id="searchcontainer" class="row row-cards">
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer footer-transparent d-print-none">
+          <div class="container-xl">
+            <div class="row text-center align-items-center flex-row-reverse">
+              <div class="col-lg-auto ms-lg-auto">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item"><a href="#" class="link-secondary">Documentation</a></li>
+                  <li class="list-inline-item"><a href="/tos" class="link-secondary">Terms of Service</a></li>
+                  <li class="list-inline-item"><a href="" target="_blank" class="link-secondary" rel="noopener">Source code</a></li>
+                  <li class="list-inline-item">
+                    <a href="https://paypal.me/ninjamstudios" target="_blank" class="link-secondary" rel="noopener">
+                      <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon text-pink icon-filled icon-inline" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
+                      Sponsor
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item">
+                    Copyright &copy; 2023
+                    <a href="#" class="link-secondary">Ninjam Studios</a>.
+                    All rights reserved.
+                  </li>
+                  <li class="list-inline-item">
+                    <a id="version" href="/changelog" class="link-secondary" rel="noopener">
+                      ---------------------------
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Libs JS -->
+    <script src="/game/dist/libs/apexcharts/dist/apexcharts.min66d9.js?1674944800" defer></script>
+    <script src="/game/dist/libs/jsvectormap/dist/js/jsvectormap.min66d9.js?1674944800" defer></script>
+    <script src="/game/dist/libs/jsvectormap/dist/maps/world66d9.js?1674944800" defer></script>
+    <script src="/game/dist/libs/jsvectormap/dist/maps/world-merc66d9.js?1674944800" defer></script>
+    <!-- Tabler Core -->
+    <script src="/game/dist/js/tabler.min66d9.js?1674944800" defer></script>
+    <script src="/game/dist/js/demo.min66d9.js?1674944800" defer></script>
+    <script src="/bundle.js" defer></script>
+    <script src="/notification.js"></script>
+    <script src="scripts/chatgame.js"></script>
+<script src="/socket.io.min.js"></script>
+<script>
+  var socket = io();
+  var loadPlayer
+
+  
+function custom_alert( message, title ) {
+    if ( !title )
+        title = 'Alert';
+
+    if ( !message )
+        message = 'No Message to Display.';
+
+    $('<div></div>').html( message ).dialog({
+        title: title,
+        resizable: false,
+        modal: true,
+        buttons: {
+            'Ok': function()  {
+                $( this ).dialog( 'close' );
+            }
+        }
+    });
+}
+
+function openProfile() {
+  window.location.href = "/game/profile/" + loadPlayer.account.playername
+}
+  
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+// ------------------------------------------ //
+
+const x = getCookie('session_id');
+const y = getCookie('access_id');
+var grant = 1
+
+alertify.set({ delay: 1700 });
+
+const codes = "14708605"
+
+function chk() {
+  if (codes.split(",").indexOf(y) !== -1) {
+    
+      grant = 1;
+    
+  }
+}
+
+  chk()
+
+  function getLevel(exp) {
+  
+  let level = 1;
+  let expNeeded = 0;
+  let currentExp = 0;
+  let cumulative = exp;
+
+  while (cumulative >= Math.round((100 * Math.pow(1.05, level-1)))) {
+    level++;
+    cumulative -= Math.round((100 * Math.pow(1.05, level-1)))}
+
+  expNeeded = (Math.round((100 * Math.pow(1.05, level-1))))-cumulative
+    currentExp = cumulative;
+
+  return level
+}
+
+function logoutF() {
+  eraseCookie('session_id')
+  eraseCookie('access_id')
+  window.location.href = "/login"
+}
+
+function addchat() {
+ 
+}
+
+socket.emit("verifyId", x);
+
+socket.on('verifyIdResult', (allowed) => {
+  if (allowed == 1) {
+    //alertify.info("Logged In!",1000);
+    socket.emit("grabStatics", x,"0");
+  } else {
+    eraseCookie(y)
+    window.location.href = "/login";
+  }
+});
+
+socket.on('userPublicSearchResult', (userArray) => {
+  const searchContainer = document.getElementById('searchcontainer');
+  searchContainer.innerHTML = "";
+
+  if (userArray.length == 0) {
+    searchContainer.innerHTML = "<strong>No players found.</strong>";
+  }
+  
+  userArray.forEach((user) => {
+    const html = `
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="row row-0">
+            <div class="col-1">
+              <img src="${user.icon}" class="w-100 h-100 object-scale-down card-img-start" alt="Player Icon" />
+            </div>
+            <div class="col">
+              <div class="card-body">
+                ${user.playername}
+                <p style="margin-top:0px;" class="text-muted">Lvl. ${user.level}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const div = document.createElement('div');
+    searchContainer.innerHTML += html;
+  });
+
+  var cardImages = document.getElementsByClassName('card-img-start');
+  
+  for (var i = 0; i < cardImages.length; i++) {
+    var image = cardImages[i];
+    var height = image.offsetHeight;
+    image.style.width = height + 'px';
+  }
+});
+
+socket.on('websiteStaticsM', (main) => {
+  document.getElementById("version").innerText = main[0]
+  for (const xv in main[1]) {
+  document.getElementById('globalcontainer').innerHTML += "<br>"+main[1][xv];
+  }
+  document.getElementById('globalcontainer').innerHTML += "<br><br><p style='text-align:center;color:yellow;margin-bottom:0;'>Welcome to the chat!</p>";
+  document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+});
+
+socket.emit("requestChat","__global__")
+
+socket.on('grabStaticsResult', (allowed,onl) => {
+  if (onl == 0) {
+    document.getElementById("loadingtext").innerText = allowed
+    alertify.error(allowed,5000);
+  }
+  loadPlayer = allowed;
+
+  if (loadPlayer.account.status == -1) {
+    document.getElementById("loadingtext").innerText = "You are banned from Birded."
+    alertify.error("You have been permanently banned from Birded.",20000);
+    alertify.error("Please contact official@birded.tech if you have questions or concerns regarding your ban.",20500);
+    loadPlayer = ""
+  } else if (loadPlayer.account.status == -2) {
+    document.getElementById("gmessageinput").disabled = true;
+    document.getElementById("gcb1").disabled = true;
+    document.getElementById("gcb1a").style.backgroundColor = "#f8f4fc";
+    document.getElementById("gcb2").disabled = true;
+    document.getElementById("gcb3").disabled = true;
+    document.getElementById("gmessageinput").value = "You have been muted!";
+  }
+  
+  document.getElementById("playername_holder").innerText = loadPlayer.account.playername;
+  if (loadPlayer.account.icon == "none") {
+    document.getElementById("playerimage_holder").style.backgroundImage = "url('/game/static/avatars/avatar.png')"
+  } else {
+    document.getElementById("playerimage_holder").style.backgroundImage = "url('" + loadPlayer.account.icon + "')"
+  }
+  if (loadPlayer.account.op == 3) {
+    document.getElementById("adminbutton").classList.remove("hiddenelem");
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#EB3838;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">DEVELOPER</div>`;
+  } else if (loadPlayer.account.op == 2) {
+    document.getElementById("adminbutton").classList.remove("hiddenelem");
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#E87676;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">ADMIN</div>`;
+  } else if (loadPlayer.account.op == 1) {
+    document.getElementById("adminbutton").classList.remove("hiddenelem");
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#C98FDE;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">MOD</div>`;
+  } else if (loadPlayer.game.rank == 3) {
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#F2B236;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">CLAW</div>`;
+  } else if (loadPlayer.game.rank == 2) {
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#E5C53F;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">TALON</div>`;
+  } else if (loadPlayer.game.rank == 1) {
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#D1D567;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">FEATHER</div>`;
+  } else if (loadPlayer.game.rank == 0) {
+    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:gray;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">PLAYER</div>`
+  }
+
+
+  document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+  document.getElementById("overlayi").remove();
+  var mcobj = document.getElementById("unblurobj")
+  mcobj.classList.add("unblurtype");
+  var verifyalert = `
+
+                <header class="navbar navbar-expand-md navbar-dark bg-red d-print-none">
+                  <div class="container-xl">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbar-menu">
+                      <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
+                        <ul class="navbar-nav">    
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="index.html#" >
+                              <span class="nav-link-title">
+                                <strong style="color:white;">Please verify your email address to lift account restrictions!</strong>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/game/settings/account" >
+                              <span class="nav-link-title">
+                                Request new verification
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+              
+`
+  if (loadPlayer.account.verification.v == 0) {
+    document.getElementById("alertbar").innerHTML = verifyalert
+    document.getElementById("gmessageinput").disabled = true;
+    document.getElementById("gcb1").disabled = true;
+    document.getElementById("gcb1a").style.backgroundColor = "#f8f4fc";
+    document.getElementById("gcb2").disabled = true;
+    document.getElementById("gcb3").disabled = true;
+    document.getElementById("gmessageinput").value = "Please verify your account before chatting!";
+  }
+  
+});
+
+
+
+var searchInput = document.getElementById("usersearchbar");
+var timeoutId;
+
+searchInput.addEventListener("input", function() {
+  var searchText = searchInput.value;
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(function() {
+    if (searchText == "{*}" && loadPlayer.account.op > 0) {
+      socket.emit("userPublicSearch", "");
+    } else if (searchText == "{*}^a" && loadPlayer.account.op > 2) {
+      socket.emit("userPublicSearch", "",true);
+    } else if (searchText.length > 2) {
+      socket.emit("userPublicSearch", searchText);
+    } else if (searchText.length > 0) {
+      document.getElementById('searchcontainer').innerHTML = "<strong>Enter at least 3 characters!</strong>";
+    } else {
+      document.getElementById('searchcontainer').innerHTML = "";
+    }
+  }, 500);
+});
+
+const inputElement = document.getElementById("gmessageinput");
+
+// Function to be executed when the input is modified
+function handleInputChange() {
+  // Code to run when the input is modified
+  inputElement.value = emojify(inputElement.value);
+  // You can perform any additional actions or call other functions here
+}
+
+// Add the event listener to the input element
+inputElement.addEventListener("input", handleInputChange);
+
+
+// Code below here is responsible for message verification.
+
+socket.on('delocalizeGlobalsend', (contents,patch, tack) => {
+  thisx = document.querySelector(`[sid="${patch}"]`);
+  thisx.setAttribute('prop', 'SERVER');
+  thisx.innerHTML = contents
+  if (tack == 1) {
+    alertify.error("Please don't use profanity in public chats!")
+  }
+});
+
+socket.on('recieveGlobalsend', (contents) => {
+  document.getElementById('globalcontainer').innerHTML += "<br>"+contents;
+  document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+});
+  
+function expt(m, patch) {
+  if (loadPlayer.account.op == 3) {
+    mname = "#EB3838"
+  } else if (loadPlayer.account.op == 2) {
+    mname = "#E87676"
+  } else if (loadPlayer.account.op == 1) {
+    mname = "#C98FDE"
+  } else if (loadPlayer.game.rank == 3) {
+    mname = "#F2B236"
+  } else if (loadPlayer.game.rank == 2) {
+    mname = "#E5C53F"
+  } else if (loadPlayer.game.rank == 1) {
+    mname = "#D1D567"
+  } else {
+    mname = "#969696"
+  }
+  tyamp = getLevel(loadPlayer.game.exp)
+  if (tyamp <=19) {
+    mlvl = "#7F7F7F"
+  } else if (tyamp <=39) {
+    mlvl = "#FFFFFF"
+  } else if (tyamp <=59) {
+    mlvl = "#FFFF49"
+  } else if (tyamp <=79) {
+    mlvl = "#B6E565"
+  } else if (tyamp <=99) {
+    mlvl = "#4A87FF"
+  } else if (tyamp <=119) {
+    mlvl = "#AC49FF"
+  } else if (tyamp <=139) {
+    mlvl = "#EEA300"
+  } else if (tyamp <=159) {
+    mlvl = "#63E1FF"
+  } else if (tyamp <=179) {
+    mlvl = "#FF79C2"
+  } else if (tyamp <=199) {
+    mlvl = "#FF5B5B"
+  } else {
+    mlvl = "#AC0000"
+  }
+  xm= `<idx prop="CLIENT" sid=${patch}>[<cbox style='color:${mlvl};'>${tyamp}</cbox>] <cbox style='color:${mname};'>${loadPlayer.account.playername}</cbox>: ${m}</idx>`
+  return xm
+  
+  
+}
+
+
+batches = []
+
+function sendg() {
+  msgdata = inputElement.value
+
+  var count = 0
+  for (const thisx of batches) {
+    if ((Date.now()-thisx) <= 10000) {count+=1}
+  }
+  if (count >= 4 && loadPlayer.account.op <=1) {
+    alertify.error("Please do not spam!")
+    return false
+  }
+  inputElement.value = ""
+  if (msgdata.trim() == "") {
+    alertify.error("Message cannot be blank!")
+    return false
+  }
+  batches.push(Date.now())
+  patch = Math.floor(Math.random() * 999999999999)
+  ppd = expt(msgdata, patch)
+  document.getElementById('globalcontainer').innerHTML += "<br>"+ppd;
+  document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+  socket.emit("globalsend", msgdata,patch,loadPlayer)
+
+}
+
+inputElement.addEventListener("keydown", function (e) {
+    if (e.code === "Enter") {  
+        sendg();
+    }
+});
+
+
+</script>
+  </body>
+</html>

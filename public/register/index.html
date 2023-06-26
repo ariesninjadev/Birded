@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+  <link href="/notifstyle.css" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <script src="/jquery.min.js"></script>
+    <script src="/foundation.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Birded | Register</title>
+    <meta name="msapplication-TileColor" content=""/>
+    <meta name="theme-color" content=""/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="MobileOptimized" content="320"/>
+    <link rel="icon" href="/favi.ico" type="image/x-icon"/>
+    <meta name="description" content="Preregister today at birded.tech!"/>
+    <meta name="twitter:image:src" content="https://birded.tech/game/static/sponsor.png">
+    <meta name="twitter:site" content="@birdedofficial">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Birded | An immersive text-based adventure.">
+    <meta name="twitter:description" content="Preregister today at birded.tech!">
+    <meta property="og:image" content="https://birded.tech/game/static/sponsor.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta property="og:site_name" content="Birded - The Game">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="Birded | An immersive text-based adventure.">
+    <meta property="og:url" content="https://birded.tech/game/static/sponsor.png">
+    <meta property="og:description" content="Preregister today at birded.tech!">
+    <!-- CSS files -->
+    <link href="/login/dist/css/tabler.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/login/game/dist/css/tabler-flags.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/login/game/dist/css/tabler-payments.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/login/game/dist/css/tabler-vendors.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/login/game/dist/css/demo.min66d9.css?1674944800" rel="stylesheet"/>
+ 
+  </head>
+  <style>
+
+  body {display:flex;width:100%;max-width: 100%;
+    overflow: hidden;-webkit-user-select: none; 
+  -ms-user-select: none;
+  user-select: none; position:fixed; }
+
+
+.disabledbtn {
+  pointer-events: none !important;
+  cursor: default !important;
+  opacity: 0.6 !important;
+}
+
+  @keyframes glideAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px); /* Adjust the value to control the upward glide */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.racanim {
+  animation: glideAnimation 4s infinite;
+}
+
+@keyframes shakeAnimation {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  10% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+  20% {
+    transform: translateX(2px) rotate(2deg);
+  }
+  30% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+  40% {
+    transform: translateX(2px) rotate(2deg);
+  }
+  50% {
+    transform: translateX(-1px) rotate(-1deg);
+  }
+  60% {
+    transform: translateX(1px) rotate(1deg);
+  }
+  70% {
+    transform: translateX(-1px) rotate(-1deg);
+  }
+  80% {
+    transform: translateX(1px) rotate(1deg);
+  }
+  90% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.text-center.text-muted.mt-3:hover {
+  animation: shakeAnimation 0.6s;
+  animation-iteration-count: 1;
+}
+
+   @keyframes flyingBird {
+      0% {
+        transform: translateX(-3%);
+        opacity: 1;
+      
+      }
+      100% {
+        transform: translateX(100vw);
+        opacity: 1;
+      }
+    }
+
+    .bird {
+      position: absolute;
+      z-index:1;
+      opacity: 0;
+      -webkit-user-select: none; 
+  -ms-user-select: none;
+  user-select: none; 
+      animation: flyingBird 5s linear forwards;
+    }
+
+    .background-ripple {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .background-ripple:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-radius: 2%;
+      background-color: #206bc4;
+      opacity: 0.3;
+      animation: rippleAnimation 3s ease-out;
+    }
+
+    @keyframes rippleAnimation {
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 0.3;
+      }
+      25% {
+        width: 20vw;
+        height: 200vh;
+      }
+      50% {
+        width: 200vw;
+        height: 200vh;
+        opacity: 0.3;
+      }
+      100% {
+        width: 0vw;
+        height: 200vh;
+        opacity: 0;
+      }
+    }
+
+  </style>
+
+  <body  class=" d-flex flex-column">
+    
+    <script src="dist/js/demo-theme.min66d9.js?1674944800"></script>
+    <div id="unblurobj" class="page blurlocal" style="width:100%;">
+    <div class="page page-center">
+      <div style="z-index:999;" class="container container-tight py-4">
+        <div class="text-center mb-4 racanim">
+          <a class="navbar-brand navbar-brand-autodark"><img src="/game/static/logo.png" height="36" alt=""></a>
+        </div>
+        <form id="regform" class="card card-md" novalidate>
+          <div  class="card-body">
+            <h2 class="card-title text-center mb-4">Create new account</h2>
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input id="user" type="text" class="form-control inputboxjs" placeholder="Enter username">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input id="email" type="email" class="form-control inputboxjs" placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+  <label class="form-label">Password</label>
+  <div class="input-group input-group-flat">
+    <input id="pass" type="password" class="form-control inputboxjs" placeholder="Password" autocomplete="off">
+    <span class="input-group-text">
+      <a href="#" class="link-secondary toggle-password" title="Toggle password visibility" data-bs-toggle="tooltip">
+        <svg xmlns="http://www.w3.org/2000/svg" class="eye-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+        </svg>
+        <svg style="display:none;" xmlns="http://www.w3.org/2000/svg" class="eye-crossed-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828"></path>
+   <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"></path>
+   <path d="M3 3l18 18"></path>
+        </svg>
+      </a>
+    </span>
+  </div>
+</div>
+            <div class="mb-3">
+              <label class="form-check">
+                <input type="checkbox" class="form-check-input"/>
+                <span class="form-check-label">Agree to the <a href="/tos" tabindex="-1">terms and conditions</a>.</span>
+              </label>
+            </div>
+            <div id="background-ripple"></div>
+  <div class="form-footer">
+    <!-- Your form and submit button here -->
+    <button id="submitbtn" type="submit" class="disabledbtn btn btn-primary w-100 signupb">Create new account</button>
+  </div>
+          </div>
+        </form>
+        <div  class="text-center text-muted mt-3">
+          Already have account? <a href="/login" tabindex="-1">Sign in</a>
+        </div>
+      </div>
+    </div>
+        <!-- Libs JS -->
+    <script src="/game/dist/libs/apexcharts/dist/apexcharts.min66d9.js?1674944800" defer></script>
+    <script src="/game/dist/libs/jsvectormap/dist/js/jsvectormap.min66d9.js?1674944800" defer></script>
+    <script src="/game/dist/libs/jsvectormap/dist/maps/world66d9.js?1674944800" defer></script>
+    <script src="/game/dist/libs/jsvectormap/dist/maps/world-merc66d9.js?1674944800" defer></script>
+    <!-- Tabler Core -->
+    <script src="/game/dist/js/tabler.min66d9.js?1674944800" defer></script>
+    <script src="/game/dist/js/demo.min66d9.js?1674944800" defer></script>
+
+    <script src="/notification.js"></script>
+<script src="/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.3/pako.min.js"></script>
+<script>
+ var socket = io();
+
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+// ------------------------------------------ //
+
+const x = getCookie('session_id');
+const y = getCookie('access_id');
+var grant = 1
+
+alertify.set({ delay: 1700 });
+
+const codes = "14708605"
+
+function chk() {
+  if (codes.split(",").indexOf(y) !== -1) {
+    
+      grant = 1;
+    
+  }
+}
+
+  chk()
+
+if (x) {
+  socket.emit("verifyId", x);
+}
+
+const isBetween = (length, min, max) => length < min || length > max ? false : true;
+
+const isPasswordSecure = (password) => {
+  const re = new RegExp("^(?=.*[a-z])(?=.*[0-9])(?=.{7,})");
+  return re.test(password);
+};
+
+function validateEmail(mail) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/.test(mail)) {
+    return (true)
+  } else {
+    return (false)
+  }
+}
+
+function onlyLetters(str) {
+  return str.match("^[A-Za-z0-9_]+$");
+}
+
+
+var inputUsername = ""
+var inputPassword = ""
+var inputEmail = ""
+
+function processForm(e) {
+  if (e.preventDefault) e.preventDefault();
+  
+
+  inputUsername = document.getElementById("user").value.trim();
+  inputPassword = document.getElementById("pass").value.trim();
+  inputEmail = document.getElementById("email").value.trim();
+
+  function cast () {
+    socket.emit("serverUsernameCompare", inputEmail, inputUsername, inputPassword);
+  }
+  
+  if (grant == 0) {
+    alertify.set({ delay: 100000 });
+	  alertify.error("We couldn't process your request. The server may be offline. Please check the status page (https://birded.tech/status)");  
+    alertify.set({ delay: 1700 });
+  } else {
+    setTimeout(cast,1000)
+  }
+
+  return false;
+}
+
+const togglePassword = document.querySelector('.toggle-password');
+  const passwordInput = document.querySelector('#pass');
+  const eyeIcon = togglePassword.querySelector('.eye-icon');
+  const eyeCrossedIcon = togglePassword.querySelector('.eye-crossed-icon');
+  
+  togglePassword.addEventListener('click', function () {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    if (type === 'password') {
+      eyeIcon.style.display = 'inline-block';
+      eyeCrossedIcon.style.display = 'none';
+    } else {
+      eyeIcon.style.display = 'none';
+      eyeCrossedIcon.style.display = 'inline-block';
+    }
+  });
+  
+  // full check
+socket.on("serverUsernameCompareResult", (ema, ven, posth) => {
+
+  if (ema == 1) {
+    if (ven == 1) {
+      if (onlyLetters(inputUsername)) {
+          if (validateEmail(inputEmail)) {
+            if ((inputUsername.length >= 3) && (inputUsername.length <= 16)) {
+              if (isPasswordSecure(inputPassword)) {
+                socket.emit("createUserAccount", inputEmail, inputUsername, posth);
+                //location.reload();
+              } else {
+                alertify.error("Password must have at least 1 letter and 1 number, and be at least 7 characters long!");
+              }
+            } else {
+              alertify.error("Username must be between 3 and 16 characters!");
+            }
+          } else {
+            alertify.error("Email must be valid!");
+          }
+        } else {
+          alertify.error("Username can only contain A-Z, a-z, 0-9, and _.");
+        }
+    } else {
+      alertify.error("This username is taken!");
+    }
+  } else {
+    alertify.error("This email is taken!");
+  }
+
+    
+});
+
+socket.on('redirectV', (endh) => {
+  window.location.href = `verify?k=${endh}`;
+});
+
+socket.on('checkLoginResult', (state, uid) => {
+  if (state == 1) {
+    setCookie("session_id", uid, 365)
+    window.location.href = "/game/settings";
+  } else {
+    alertify.error("Invalid Login.");
+  }
+});
+
+socket.on('verifyIdResult', (allowed) => {
+  if (allowed == 1) {
+    alertify.success("Loading...");
+    window.location.href = "/game/settings";
+  } else {
+    eraseCookie(y)
+  }
+});
+
+var regform = document.getElementById('regform');
+if (regform.attachEvent) {
+  regform.attachEvent("submit", processForm);
+} else {
+  regform.addEventListener("submit", processForm);
+}
+
+(function() {
+  $('.inputboxjs, input[type="checkbox"]').on('keyup change', function() {
+    var empty = false;
+    var checkboxChecked = $('input[type="checkbox"]').is(':checked');
+
+    $('.inputboxjs').each(function() {
+      if ($(this).val() === '') {
+        empty = true;
+      }
+    });
+
+    if (empty || !checkboxChecked) {
+      $('#submitbtn').addClass('disabledbtn');
+    } else {
+      $('#submitbtn').removeClass('disabledbtn');
+    }
+  });
+})();
+
+function makeBirds() {
+  var numBirds = 1;
+
+      for (var i = 0; i < numBirds; i++) {
+        var bird = document.createElement('div');
+        bird.className = 'bird';
+
+        var img = document.createElement('img');
+        img.src = 'bird-image.png';
+        img.alt = 'Flying Bird';
+
+        // Randomize size (20% to 70%)
+        var randomSize = Math.floor(Math.random() * 5);
+        console.log(randomSize)
+        img.style.width = randomSize + '%';
+        img.style.height = randomSize + '%';
+
+        bird.appendChild(img);
+        document.body.appendChild(bird);
+
+        // Randomize starting Y position
+        var windowHeight = window.innerHeight;
+        var birdHeight = bird.offsetHeight;
+        var maxTop = windowHeight - birdHeight;
+        var randomTop = Math.floor(Math.random() * maxTop);
+        bird.style.top = randomTop + 'px';
+
+        // Randomize delay (0.4s to 2s)
+        var randomDelay = Math.random() * 4;
+        bird.style.animationDelay = randomDelay + 's';
+
+        // Calculate animation duration based on window width
+        var windowWidth = window.innerWidth;
+        var birdWidth = bird.offsetWidth;
+        var distanceToTravel = (windowWidth + birdWidth) / 4;
+        var animationDuration = distanceToTravel / (randomDelay + 5); // 5s is the original animation duration
+        bird.style.animationDuration = animationDuration + 's';
+
+        // Remove bird after animation ends
+        bird.addEventListener('animationend', function() {
+          this.parentNode.removeChild(this);
+        });
+      }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+      // Number of birds to create
+     setInterval(makeBirds, 1000);
+    });
+
+document.addEventListener('DOMContentLoaded', function() {
+      var submitButton = document.getElementById('submitbtn');
+      var backgroundRipple = document.getElementById('background-ripple');
+
+      submitButton.addEventListener('click', function(event) {
+        // Create a background ripple effect element
+        var rippleEffect = document.createElement('span');
+        rippleEffect.className = 'background-ripple';
+
+        // Add the background ripple effect to the container
+        backgroundRipple.appendChild(rippleEffect);
+
+        // Remove the background ripple effect after the animation ends
+        rippleEffect.addEventListener('animationend', function() {
+          backgroundRipple.removeChild(rippleEffect);
+        });
+      });
+    });
+
+  
+
+  
+      
+  
+</script>
+    </div>
+  </body>
+</html>

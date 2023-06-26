@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+  <link href="/notifstyle.css" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <script src="/jquery.min.js"></script>
+    <script src="/foundation.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Birded | Login</title>
+    <meta name="msapplication-TileColor" content=""/>
+    <meta name="theme-color" content=""/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="MobileOptimized" content="320"/>
+    <link rel="icon" href="/favi.ico" type="image/x-icon"/>
+    <meta name="description" content="Preregister today at birded.tech!"/>
+    <meta name="twitter:image:src" content="https://birded.tech/game/static/sponsor.png">
+    <meta name="twitter:site" content="@birdedofficial">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Birded | An immersive text-based adventure.">
+    <meta name="twitter:description" content="Preregister today at birded.tech!">
+    <meta property="og:image" content="https://birded.tech/game/static/sponsor.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta property="og:site_name" content="Birded - The Game">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="Birded | An immersive text-based adventure.">
+    <meta property="og:url" content="https://birded.tech/game/static/sponsor.png">
+    <meta property="og:description" content="Preregister today at birded.tech!">
+    <!-- CSS files -->
+    <link href="/login/dist/css/tabler.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/login/game/dist/css/tabler-flags.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/login/game/dist/css/tabler-payments.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/login/game/dist/css/tabler-vendors.min66d9.css?1674944800" rel="stylesheet"/>
+    <link href="/login/game/dist/css/demo.min66d9.css?1674944800" rel="stylesheet"/>
+ 
+  </head>
+    <style>
+
+
+
+.disabledbtn {
+  pointer-events: none !important;
+  cursor: default !important;
+  opacity: 0.6 !important;
+}
+      
+      @import url('../rsms.me/inter/inter.css');
+      :root {
+      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+      }
+      body {
+      	font-feature-settings: "cv03", "cv04", "cv11";
+        display:flex;width:100%;max-width: 100%;
+    overflow: hidden;-webkit-user-select: none; 
+  -ms-user-select: none;
+  user-select: none; position:fixed;
+      }
+      html {
+        width: 100%;
+      }
+
+  @keyframes glideAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px); /* Adjust the value to control the upward glide */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.racanim {
+  animation: glideAnimation 4s infinite;
+  
+}
+
+
+
+      
+    </style>
+  </head>
+  <body  class=" d-flex flex-column bg-white">
+    <script src="dist/js/demo-theme.min66d9.js?1674944800"></script>
+    <div class="row g-0 flex-fill">
+      <div class="col-12 col-lg-6 col-xl-4 border-top-wide border-primary d-flex flex-column justify-content-center">
+        <div class="container container-tight my-5 px-lg-5">
+          <div class="text-center mb-4 racanim">
+            <a class="navbar-brand navbar-brand-autodark"><img src="/game/static/logo.png" height="36" alt=""></a>
+          </div>
+          <h2 class="h3 text-center mb-3">
+            Login to your account
+          </h2>
+          <form id="regform" novalidate>
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input id="luser" type="email" class="form-control inputboxjs" placeholder="Enter username" autocomplete="off">
+            </div>
+            <div class="mb-2">
+              <label class="form-label">
+                Password
+                <span class="form-label-description">
+                  <a href="#">I forgot password</a>
+                </span>
+              </label>
+              <div class="input-group input-group-flat">
+                <input id="lpass" type="password" class="form-control inputboxjs"  placeholder="Password"  autocomplete="off">
+                <span class="input-group-text">
+                  <a href="#" class="link-secondary toggle-password" title="Toggle password visibility" data-bs-toggle="tooltip">
+        <svg xmlns="http://www.w3.org/2000/svg" class="eye-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+        </svg>
+        <svg style="display:none;" xmlns="http://www.w3.org/2000/svg" class="eye-crossed-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828"></path>
+   <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"></path>
+   <path d="M3 3l18 18"></path>
+        </svg>
+      </a>
+                </span>
+              </div>
+            </div>
+            <div class="mb-2">
+              <label class="form-check">
+                <input type="checkbox" class="form-check-input"/>
+                <span class="form-check-label">Remember me on this device</span>
+              </label>
+            </div>
+            <div class="form-footer">
+              <button id="submitbtn" type="submit" class="disabledbtn btn btn-primary w-100 signupb">Sign in</button>
+            </div>
+          </form>
+          <div class="text-center text-muted mt-3">
+            Don't have account yet? <a href="/register" tabindex="-1">Sign up</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-8 d-none d-lg-block">
+        <!-- Photo -->
+        <div class="bg-cover h-100 min-vh-100" style="box-shadow: -5px 0px 10px 1px #aaaaaa;background-image: url(https://cdna.artstation.com/p/assets/images/images/052/337/274/4k/whimmy-bird.jpg?1659538570)"></div>
+      </div>
+    </div>
+    <!-- Libs JS -->
+    <!-- Tabler Core -->
+    <script src="dist/js/tabler.min66d9.js?1674944800" defer></script>
+    <script src="dist/js/demo.min66d9.js?1674944800" defer></script>
+    <script src="/notification.js"></script>
+    <script src="/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.3/pako.min.js"></script>
+    <script>
+var socket = io();
+
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+// ------------------------------------------ //
+
+const x = getCookie('session_id');
+const y = getCookie('access_id');
+var grant = 1
+
+alertify.set({ delay: 1700 });
+
+const codes = "14708605"
+
+function chk() {
+  if (codes.split(",").indexOf(y) !== -1) {
+    
+      grant = 1;
+    
+  }
+}
+
+  chk()
+
+if (x) {
+  socket.emit("verifyId", x);
+}
+
+      
+      const togglePassword = document.querySelector('.toggle-password');
+  const passwordInput = document.querySelector('#lpass');
+  const eyeIcon = togglePassword.querySelector('.eye-icon');
+  const eyeCrossedIcon = togglePassword.querySelector('.eye-crossed-icon');
+  
+  togglePassword.addEventListener('click', function () {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    if (type === 'password') {
+      eyeIcon.style.display = 'inline-block';
+      eyeCrossedIcon.style.display = 'none';
+    } else {
+      eyeIcon.style.display = 'none';
+      eyeCrossedIcon.style.display = 'inline-block';
+    }
+  });
+
+  socket.on('checkLoginResult', (state, uid) => {
+  if (state == 1) {
+    setCookie("session_id", uid, 365)
+    window.location.href = "/game/settings";
+  } else {
+    alertify.error("Invalid Login.");
+  }
+});
+
+  socket.on('verifyIdResult', (allowed) => {
+  if (allowed == 1) {
+    alertify.success("Loading...");
+    window.location.href = "/game/settings";
+  } else {
+    eraseCookie(y)
+  }
+});
+
+  function processSignin(e) {
+  if (e.preventDefault) e.preventDefault();
+
+	inputUsernameL = document.getElementById("luser").value.trim();
+  inputPasswordL = document.getElementById("lpass").value.trim();
+
+  if (grant == 0) {
+    alertify.set({ delay: 100000 });
+	  alertify.error("We couldn't process your request. The server may be offline. Please check the status page (https://birded.tech/status)");  
+    alertify.set({ delay: 1700 });
+  } else {
+    socket.emit("checkLogin", inputUsernameL, inputPasswordL);
+  }
+
+
+  return false;
+}
+
+var regform = document.getElementById('regform');
+if (regform.attachEvent) {
+  regform.attachEvent("submit", processSignin);
+} else {
+  regform.addEventListener("submit", processSignin);
+}
+
+(function() {
+  $('.inputboxjs, input[type="checkbox"]').on('keyup change', function() {
+    var empty = false;
+
+    $('.inputboxjs').each(function() {
+      if ($(this).val() === '') {
+        empty = true;
+      }
+    });
+
+    if (empty) {
+      $('#submitbtn').addClass('disabledbtn');
+    } else {
+      $('#submitbtn').removeClass('disabledbtn');
+    }
+  });
+})();
+    </script>
+  </body>
+</html>

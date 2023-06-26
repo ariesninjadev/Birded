@@ -1,0 +1,115 @@
+<head>
+<title>Birded | Status</title>
+<link rel="icon" type="image/x-icon" href="/favi.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+  --header-background: #fc5e66;
+  --header-border-color: #000000;
+  --nav-hover-color: #eb4d55;
+  --active-background-color: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+  font-family: 'Raleway';
+}
+
+.front {
+  z-index: 10; 
+  position: absolute !important;
+  width: 100%;
+}
+
+.nav-bar {
+  background-color: var(--header-background);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  transition-duration: 500ms;
+}
+
+.nav-bar li {
+  height: 100%;
+  width: 140px;
+  transition-duration: 500ms !important;
+}
+
+.nav-bar li a {
+  color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.nav-bar .has-dropdown ul li a {
+  padding: 12px;
+}
+
+.nav-bar li a:hover {
+  background-color: var(--nav-hover-color);
+  color: #fff;
+  transition-duration: 500ms;
+}
+/*
+.nav-bar li a:active {
+  background-color: rgb(164, 112, 16);
+  color: #fff; 
+}
+*/
+.dropdown {
+  background-color: var(--nav-hover-color);
+  color: #fff;
+  padding: 0;
+  list-style: none;
+  display: none;
+}
+
+.dropdown li a {
+  color: #fff;
+}
+
+.dropdown li a:hover {
+  background-color: var(--header-background);
+  color: #000;
+}
+
+.nav-bar li.has-dropdown:hover .dropdown {
+  color: #fff;
+  display: block;
+}
+
+.nav-bar li.active a  {
+  color: #fff;
+}
+
+nav ul.nav-bar > li.active {
+  background-color: var(--active-background-color);
+  color: #fff;
+} 
+</style>
+<div class="container front">
+  <nav>
+    <ul class="nav-bar">
+      <li style="width:100%;"><a style="width:100%;" href="/">Return Home</a></li>
+    </ul>
+  </nav>
+</div>
+<iframe src="https://birded1.statuspage.io/" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; z-index: 1; border:none; margin:0; padding:0; overflow:hidden;">
+    Your browser doesn't support this status page.
+</iframe>
