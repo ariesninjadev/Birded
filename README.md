@@ -10,8 +10,8 @@ Birded is a web game produced by Ninjam Studios releasing in 2024.
 ## Authors
 
 - [@AriesNinjaDev](https://www.github.com/ariesninjadev)
-- [@ChloeDoesStuff](https://www.github.com/chloedoesstuff)
-- [@Kaleb_](https://www.github.com/kaleb_)
+- [@Chloe](https://github.com/ogniK5377)
+- [@Kaleb](https://www.github.com/kaleb)
 
 
 ## Deployment
