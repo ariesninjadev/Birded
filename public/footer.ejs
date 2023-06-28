@@ -1,0 +1,171 @@
+<script src="/socket.io.min.js"></script>
+<script>
+  var socket = io({reconnection: false});
+</script>
+<style>
+:root {
+  --pulseSize: 8px;
+  --blue: rgba(235,64,52,1);
+  --transparentBlue: rgba(255,85,70,0);
+}
+
+.pulsing-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--blue);
+  animation: pulsing 2s infinite;
+  transition: all 0.2s;
+  margin-right:8px;
+  margin-left:8px;
+  vertical-align:5%;
+}
+
+@keyframes pulsing {
+  from {
+    box-shadow: 0 0 0 0 var(--blue);
+  }
+  70% {
+    box-shadow: 0 0 0 var(--pulseSize) var(--transparentBlue);
+  }
+  to {
+    box-shadow: 0 0 0 0 var(--transparentBlue);
+  }
+}
+</style>
+<footer class="footer footer-transparent d-print-none">
+          <div class="container-xl">
+            <p><span id="dotcont" class="pulsing-dot"></span> <atc id="metcont">Connecting to Main...</atc></p>
+            <div class="row text-center align-items-center flex-row-reverse">
+              <div class="col-lg-auto ms-lg-auto">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item"><a href="#" class="link-secondary">Documentation</a></li>
+                  <li class="list-inline-item"><a href="/tos" class="link-secondary">Terms of Service</a></li>
+                  <li class="list-inline-item"><a href="" target="_blank" class="link-secondary" rel="noopener">Source code</a></li>
+                  <li class="list-inline-item">
+                    <a href="https://paypal.me/ninjamstudios" target="_blank" class="link-secondary" rel="noopener">
+                      <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon text-pink icon-filled icon-inline" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
+                      Sponsor
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item">
+                    Copyright &copy; 2023
+                    <a href="#" class="link-secondary">Ninjam Studios</a>.
+                    All rights reserved.
+                  </li>
+                  <li class="list-inline-item">
+                    <a id="version" href="/changelog" class="link-secondary" rel="noopener">
+                      ---------------------------
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+  <script>
+var paddedNumber;
+var reconnectCount = 0;
+var reconnectTimerId;
+var duration = 0;
+
+const start = Date.now();
+  socket.emit("ping", () => {
+    duration = Date.now() - start;
+  });
+
+function setRandomBirdNumber() {
+  var randomNumber = Math.floor(Math.random() * 30) + 1;
+  paddedNumber = String(randomNumber).padStart(3, '0');
+  updateDisplay();
+}
+
+function updateDisplay() {
+  var element = document.getElementById("metcont");
+  if (duration >= 400) {
+    element.textContent = "Slow connection to BIRD" + paddedNumber + ". Ping: " + duration + "ms.";
+    document.documentElement.style.setProperty('--blue', 'rgba(255,249,77,1)');
+    document.documentElement.style.setProperty('--transparentBlue', 'rgba(255,252,158,0)');
+  } else {
+    element.textContent = "Connected to BIRD" + paddedNumber + ". Ping: " + duration + "ms.";
+    document.documentElement.style.setProperty('--blue', 'rgba(80,216,68,1)');
+    document.documentElement.style.setProperty('--transparentBlue', 'rgba(116,252,104,0)');
+  }
+}
+
+function showCountdown(seconds) {
+  var element = document.getElementById("metcont");
+  element.textContent = "Disconnected... attempting to reconnect in " + seconds + " seconds...";
+}
+
+function startReconnectCountdown() {
+  var countdown;
+  
+  if (reconnectCount <= 3) {
+    countdown = 3;
+  } else if (reconnectCount <= 9) {
+    countdown = 10;
+  } else {
+    countdown = 30;
+  }
+
+  
+  showCountdown(countdown);
+  
+  
+  reconnectTimerId = setInterval(function() {
+    countdown--;
+    if (countdown >= 0) {
+    showCountdown(countdown);
+    }
+    
+    if (countdown < 0) {
+      clearInterval(reconnectTimerId);
+      reconnect();
+    }
+  }, 1000);
+}
+
+function reconnect() {
+  clearInterval(reconnectTimerId);
+  socket.connect();
+}
+
+setRandomBirdNumber();
+
+socket.on('disconnect', function() {
+  reconnectCount++;
+  startReconnectCountdown();
+  
+  document.documentElement.style.setProperty('--blue', 'rgba(235,64,52,1)');
+  document.documentElement.style.setProperty('--transparentBlue', 'rgba(255,85,70,0)');
+});
+
+socket.on('connect', function() {
+  clearInterval(reconnectTimerId);
+  reconnectCount = 0;
+  setRandomBirdNumber();
+  
+  document.documentElement.style.setProperty('--blue', 'rgba(80,216,68,1)');
+  document.documentElement.style.setProperty('--transparentBlue', 'rgba(116,252,104,0)');
+});
+
+socket.on('connect_error', (error) => {
+  reconnectCount++;
+  startReconnectCountdown();
+});
+
+setInterval(() => {
+  const start = Date.now();
+  socket.emit("ping", () => {
+    duration = Date.now() - start;
+    updateDisplay();
+  });
+}, 2000);
+  </script>
+        </footer>

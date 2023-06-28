@@ -5,7 +5,7 @@
 const offline = true;
 const reason = "The game isn't open yet!";
 
-const version = "v0.2.6 ALPHANET Dev aa-001.00"
+const version = "v0.2.8 aa-061.00"
 
 const network = ['/','/admin','/admin/idtoname','/admin/logs','/admin/logs/automod', '/game','/game/settings/account','/game/chat']
 
@@ -346,6 +346,10 @@ io.sockets.on('connection', function(socket){
     console.log(error);
   });
    
+  });
+
+  socket.on("ping", (callback) => {
+    callback();
   });
   
 
