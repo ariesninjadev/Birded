@@ -150,9 +150,9 @@ app.use(express.static(__dirname + "/public"));
 
 
   
-app.get('/',function(req, res) {
-	res.sendFile(__dirname + '/public/index.html');
-});
+//app.get('/',function(req, res) {
+//	res.sendFile(__dirname + '/public/index.html');
+//});
 
 for (const n in network) {
 app.get(network[n], function(req, res) {
