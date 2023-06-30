@@ -1,5 +1,7 @@
 { pkgs }: {
 	deps = [
+  pkgs.python39Full
+  pkgs.python310
   pkgs.redis
   pkgs.notmuch-bower
   pkgs.meteor

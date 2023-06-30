@@ -73,6 +73,18 @@ var paddedNumber;
 var reconnectCount = 0;
 var reconnectTimerId;
 var duration = 0;
+var locData = "LIMBO"
+
+var host = window.location.host;
+if (host == "birded-dev-workspace.ariesninja.repl.co") {
+  locData = "DEV"
+} else if (host.includes(".ariesninja.repl.co")) {
+  locData = "ALPHA"
+} else if (host == "birded.tech") {
+  locData = "BIRD"
+} else {
+  locData = "ILLEGITIMATE"
+}
 
 const start = Date.now();
   socket.emit("ping", () => {
@@ -88,11 +100,11 @@ function setRandomBirdNumber() {
 function updateDisplay() {
   var element = document.getElementById("metcont");
   if (duration >= 400) {
-    element.textContent = "Slow connection to BIRD" + paddedNumber + ". Ping: " + duration + "ms.";
+    element.textContent = "Slow connection to " + locData + paddedNumber + ". Ping: " + duration + "ms.";
     document.documentElement.style.setProperty('--blue', 'rgba(255,249,77,1)');
     document.documentElement.style.setProperty('--transparentBlue', 'rgba(255,252,158,0)');
   } else {
-    element.textContent = "Connected to BIRD" + paddedNumber + ". Ping: " + duration + "ms.";
+    element.textContent = "Connected to " + locData + paddedNumber + ". Ping: " + duration + "ms.";
     document.documentElement.style.setProperty('--blue', 'rgba(80,216,68,1)');
     document.documentElement.style.setProperty('--transparentBlue', 'rgba(116,252,104,0)');
   }
@@ -167,5 +179,10 @@ setInterval(() => {
     updateDisplay();
   });
 }, 2000);
+
+
+
+
+    
   </script>
         </footer>

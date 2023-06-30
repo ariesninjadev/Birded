@@ -205,6 +205,7 @@
     <script src="/notification.js"></script>
     <script src="/profanity-filter.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.3/pako.min.js"></script>
+          <%- include(origin + '/public/gscripts'); %>
 <script>
 
 function rbw(istr) {const bw = bannedList; for (let i = 0; i < bw.length; i++) {const regex = new RegExp(bw[i], "gi");istr = istr.replace(regex, "*".repeat(bw[i].length));};return istr;}

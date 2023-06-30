@@ -1,10 +1,18 @@
 {
   "files": {
+    "public/beta/index.html": [
+      {
+        "id": "48d06126-4891-4267-a3a1-9e7dfe55c9bb",
+        "line": 54,
+        "version": 1,
+        "index": 2946
+      }
+    ],
     "public/game/settings/index.html": [
       {
         "id": "b914c2ce-9e90-4959-8045-925e6fa8c898",
         "line": 1,
-        "version": 1939,
+        "version": 1,
         "index": 0
       }
     ],
@@ -12,14 +20,14 @@
       {
         "id": "16905733-f06f-458a-a16f-8937de6abe2c",
         "line": 403,
-        "version": 1876,
-        "index": 38028
+        "version": 12,
+        "index": 18112
       },
       {
         "id": "44c5e8fd-f4c4-4475-95cc-69c608c25b1e",
         "line": 403,
-        "version": 1876,
-        "index": 38028
+        "version": 12,
+        "index": 18112
       }
     ]
   }

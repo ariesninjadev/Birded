@@ -5,9 +5,31 @@
 const offline = true;
 const reason = "The game isn't open yet!";
 
-const version = "v0.2.8 aa-061.00"
+const version = "v0.2.8"
+const subversion = "aa-061.00"
 
-const network = ['/','/admin','/admin/idtoname','/admin/logs','/admin/logs/automod', '/game','/game/settings/account','/game/chat']
+const network = [
+  '/',
+  '/admin',
+  '/admin/idtoname',
+  '/admin/logs',
+  '/admin/logs/automod',
+  '/game',
+  '/game/settings/account',
+  '/game/chat',
+  '/login',
+  '/login/verify',
+  '/login/reset',
+  '/login/success',
+  '/login/reset/success',
+  '/register',
+  '/register/verify',
+  '/register/success',
+  '/changelog',
+  '/status',
+  '/tos'
+]
+
 
 /// ----------------------------- ///
 
@@ -43,7 +65,7 @@ function gsi() {
   return `${timestamp}-${random}`;
 }
 
-  
+  fversion = version + " " + process.env['vRefID'] + " " + subversion
 
   function getLevel(exp) {
   
@@ -314,12 +336,12 @@ server.listen(8080);
 
 var io = require('socket.io')(server);
 io.sockets.on('connection', function(socket){
-  socket.emit("websiteStatics", [version]);
+  socket.emit("websiteStatics", [fversion]);
 
   socket.on('requestChat', function(loc) {
     dbc.requestChat(loc)
     .then(result => {
-      socket.emit("websiteStaticsM",[version,result])
+      socket.emit("websiteStaticsM",[fversion,result])
     })
   })
   

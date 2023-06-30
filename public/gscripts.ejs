@@ -1,0 +1,47 @@
+<% /* %>
+
+GSCRIPTS
+  
+This file bundles and distributes client-side code on-demand. As a result, all temps and icperms are withheld from mass moderation, denoted by "//WITHHELD"
+
+
+
+<% */ %>
+
+
+<script>
+  
+function setCookie(name, value, days) { //WITHHELD
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) { //WITHHELD
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) { //WITHHELD
+  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+  
+setTimeout(bl, 5000);  
+    
+
+    function showAlert() { //WITHHELD
+      alertify.info("Just a friendly reminder that this platform is brand new! Please report bugs to official@birded.tech for rewards!", 8000);
+    }
+    function bl() {alertify.info("Just a friendly reminder that this platform is brand new! Please report bugs to official@birded.tech for rewards!", 8000);setInterval(showAlert, 120000);}
+</script>
