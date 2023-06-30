@@ -6,9 +6,6 @@ This website endpoint serves as a redirect service. It routes the user to their 
 ./login : Login Page (Default if no session cookie)
 ./game : Game Page (Default if contains session cookie)
 
-
-$1 - Super    $5 - Mega    $25 - Ultimate
-
 -->
 
 
@@ -173,44 +170,5 @@ body {
 </style>
 
 <script>
-  function setCookie(name,value,days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-}
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
-function eraseCookie(name) {   
-    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-}
-  // ------------------------------------------ //
-/*
-const x = getCookie('session_id');
-const y = getCookie('access_id');
-
-const codes = "16639474,55626123,07282008,69420693,50361996,80028002,14708605"
-
-  function chk () {
-if (codes.split(",").indexOf(y) !== -1) {
-  if (!x) {
-  window.location.replace("/soon?beta=true");
-}
-} else {
-  window.location.replace("/soon");
-}
-  }*/
-
 window.location.replace("/soon");
 </script>
