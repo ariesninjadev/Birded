@@ -292,8 +292,9 @@ socket.on('verifyIdResult', (allowed) => {
     //alertify.info("Logged In!",1000);
     socket.emit("grabStatics", x,"1");
   } else {
-    eraseCookie(y)
-    window.location.href = "/login";
+    socket.emit("grabStatics", x,"1");
+    //eraseCookie(y)
+    //window.location.href = "/login";
   }
 });
 

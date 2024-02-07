@@ -3,31 +3,47 @@
     "public/beta/index.html": [
       {
         "id": "48d06126-4891-4267-a3a1-9e7dfe55c9bb",
-        "line": 54,
-        "version": 1,
-        "index": 2946
+        "line": 84,
+        "version": 55,
+        "index": 5667
+      }
+    ],
+    "public/footer.ejs": [
+      {
+        "id": "6dbea81d-f435-4e02-850f-2fd31b6e6d85",
+        "line": 3,
+        "version": 749,
+        "index": 51
+      }
+    ],
+    "public/game/index.ejs": [
+      {
+        "id": "e0597d98-9132-4b14-9715-0517af0e9ee9",
+        "line": 29,
+        "version": 292,
+        "index": 908
       }
     ],
     "public/game/settings/index.html": [
       {
         "id": "b914c2ce-9e90-4959-8045-925e6fa8c898",
         "line": 1,
-        "version": 1,
+        "version": 1939,
         "index": 0
       }
     ],
     "public/profile/display.ejs": [
       {
         "id": "16905733-f06f-458a-a16f-8937de6abe2c",
-        "line": 403,
-        "version": 12,
-        "index": 18112
+        "line": 382,
+        "version": 1883,
+        "index": 35327
       },
       {
         "id": "44c5e8fd-f4c4-4475-95cc-69c608c25b1e",
-        "line": 403,
-        "version": 12,
-        "index": 18112
+        "line": 382,
+        "version": 1883,
+        "index": 35327
       }
     ]
   }

@@ -1,5 +1,20 @@
 <%- include(origin + '/public/heading',{'title':'Game'}); %>
 <%- include(origin + '/public/contentnav',{'active':0,'settings':0}); %>      
+  <style>
+    .global-pre {
+      height:50vh;
+      overflow:auto;
+      white-space: pre-wrap;
+      font-size: 1.3em;
+    }
+    .global-pre::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: bottom;
+      }
+
+  </style>
       <div class="page-wrapper">
         <!-- Page header -->
         <div class="page-header d-print-none">
@@ -8,27 +23,10 @@
               <div class="col">
                 <!-- Page pre-title -->
                 <div class="page-pretitle">
-                  Game is
+                  You are on version <strong style="font-weight:700;">Beta i7a</strong>.
                 </div>
-                <h2 class="page-title">
-                  Under Construction
-                </h2>
               </div>
               <!-- Page title actions -->
-              <div class="col-auto ms-auto d-print-none">
-                <div class="btn-list">
-                  
-                  <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
-                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
-                    Write a Report
-                  </a>
-                  <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
-                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -36,116 +34,62 @@
         <div class="page-body">
           <div class="container-xl">
             <div class="row row-deck row-cards">
-              <div>
-                <!--<img src="/game/static/sponsor.png" alt="Sponsor" onclick="window.open('https://paypal.me/ninjamstudios')">-->
-              <p>_blank_</p>
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs">
+                      <li class="nav-item">
+                        <a href="#tabs-home-9" class="nav-link active" data-bs-toggle="tab"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                          Game</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <div class="tab-content">
+                      <div class="tab-pane active show" id="tabs-home-9">
+              <pre id="globalcontainer" class='global-pre'></pre><div class="input-group input-group-flat">
+                              <input id="gmessageinput" type="text" class="form-control"  autocomplete="off">
+                              <span id="gcb1a" class="input-group-text">
+                                <a id="gcb1" href="#" class="link-secondary" title="Gift" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/x -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-gift" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z"></path>
+              <path d="M12 8l0 13"></path>
+              <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"></path>
+              <path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5"></path>
+              </svg>
+                                </a>
+                                <a id="gcb2" href="#" class="link-secondary ms-2" title="Preferences" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/adjustments -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M6 4l0 4" /><path d="M6 12l0 8" /><path d="M12 16m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M12 4l0 10" /><path d="M12 18l0 2" /><path d="M18 7m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M18 4l0 1" /><path d="M18 9l0 11" /></svg>
+                                </a>
+                                <a id="gcb3" href="javascript:sendg()" class="link-secondary ms-2" title="Send" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/bell -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M10 14l11 -11"></path>
+              <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"></path>
+              </svg>
+                                </a>
+                              </span>
+                            </div>
+                      </div>
+                      <div class="tab-pane" id="tabs-profile-9">
+                        <h4>You are not in a team!</h4>
+                      </div>
+                      <div class="tab-pane" id="tabs-add-9">
+                      <input id="usersearchbar" type="text" value="" class="form-control" placeholder="Search…" aria-label="Search in website"><br>
+                      <div id="searchcontainer" class="row row-cards">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               </div>
             </div>
           </div>
         </div>
         <%- include(origin + '/public/footer'); %>
-      </div>
-    </div>
-    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">New report</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label class="form-label">Name</label>
-              <input type="text" class="form-control" name="example-text-input" placeholder="Your report name">
-            </div>
-            <label class="form-label">Report type</label>
-            <div class="form-selectgroup-boxes row mb-3">
-              <div class="col-lg-6">
-                <label class="form-selectgroup-item">
-                  <input type="radio" name="report-type" value="1" class="form-selectgroup-input" checked>
-                  <span class="form-selectgroup-label d-flex align-items-center p-3">
-                    <span class="me-3">
-                      <span class="form-selectgroup-check"></span>
-                    </span>
-                    <span class="form-selectgroup-label-content">
-                      <span class="form-selectgroup-title strong mb-1">Report a Player</span>
-                      <span class="d-block text-muted">Is someone breaking the rules? Being offensive?</span>
-                    </span>
-                  </span>
-                </label>
-              </div>
-              <div class="col-lg-6">
-                <label class="form-selectgroup-item">
-                  <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
-                  <span class="form-selectgroup-label d-flex align-items-center p-3">
-                    <span class="me-3">
-                      <span class="form-selectgroup-check"></span>
-                    </span>
-                    <span class="form-selectgroup-label-content">
-                      <span class="form-selectgroup-title strong mb-1">Suggest a Change</span>
-                      <span class="d-block text-muted">Found a bug? Have a cool idea? Want to suggest a change?</span>
-                    </span>
-                  </span>
-                </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-8">
-                <div class="mb-3">
-                  <label class="form-label">Report url</label>
-                  <div class="input-group input-group-flat">
-                    <span class="input-group-text">
-                      https://bird.ed/reports/
-                    </span>
-                    <input type="text" class="form-control ps-0" style="color:black;" value="REPORT_NAME" autocomplete="off">
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="mb-3">
-                  <label class="form-label">Visibility</label>
-                  <select class="form-select">
-                    <option value="1" selected>Private</option>
-                    <option value="2">Public</option>
-                    <option value="3">Hidden</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="mb-3">
-                  <label class="form-label">Your name</label>
-                  <input type="text" class="form-control">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="mb-3">
-                  <label class="form-label">Report Date/Occurence</label>
-                  <input type="date" class="form-control">
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div>
-                  <label class="form-label">Additional information</label>
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
-              Cancel
-            </a>
-            <a href="#" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
-              <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
-              Create new report
-            </a>
-          </div>
-        </div>
       </div>
     </div>
     <!-- Libs JS -->
@@ -159,120 +103,475 @@
 
     <script src="/notification.js"></script>
   <%- include(origin + '/public/gscripts'); %>
-<script>
-  var loadPlayer
+    <script>
+      var loadPlayer
 
-  
-function custom_alert( message, title ) {
-    if ( !title )
-        title = 'Alert';
 
-    if ( !message )
-        message = 'No Message to Display.';
+    function custom_alert( message, title ) {
+        if ( !title )
+            title = 'Alert';
 
-    $('<div></div>').html( message ).dialog({
-        title: title,
-        resizable: false,
-        modal: true,
-        buttons: {
-            'Ok': function()  {
-                $( this ).dialog( 'close' );
+        if ( !message )
+            message = 'No Message to Display.';
+
+        $('<div></div>').html( message ).dialog({
+            title: title,
+            resizable: false,
+            modal: true,
+            buttons: {
+                'Ok': function()  {
+                    $( this ).dialog( 'close' );
+                }
             }
+        });
+    }
+
+    function openProfile() {
+      window.location.href = "/game/profile/" + loadPlayer.account.playername
+    }
+
+
+    // ------------------------------------------ //
+
+    const x = getCookie('session_id');
+    const y = getCookie('access_id');
+    var grant = 1
+
+    alertify.set({ delay: 1700 });
+
+    const codes = "14708605"
+
+    function chk() {
+      if (codes.split(",").indexOf(y) !== -1) {
+
+          grant = 1;
+
+      }
+    }
+
+      chk()
+
+      function getLevel(exp) {
+
+      let level = 1;
+      let expNeeded = 0;
+      let currentExp = 0;
+      let cumulative = exp;
+
+      while (cumulative >= Math.round((100 * Math.pow(1.05, level-1)))) {
+        level++;
+        cumulative -= Math.round((100 * Math.pow(1.05, level-1)))}
+
+      expNeeded = (Math.round((100 * Math.pow(1.05, level-1))))-cumulative
+        currentExp = cumulative;
+
+      return level
+    }
+
+    function logoutF() {
+      eraseCookie('session_id')
+      eraseCookie('access_id')
+      window.location.href = "/login"
+    }
+
+    function addchat() {
+
+    }
+
+    socket.emit("verifyId", x);
+
+    socket.on('verifyIdResult', (allowed) => {
+      if (allowed == 1) {
+        //alertify.info("Logged In!",1000);
+        socket.emit("grabStatics", x,"0");
+      } else {
+        eraseCookie(y)
+        window.location.href = "/login";
+      }
+    });
+
+    socket.on('userPublicSearchResult', (userArray) => {
+      const searchContainer = document.getElementById('searchcontainer');
+      searchContainer.innerHTML = "";
+
+      if (userArray.length == 0) {
+        searchContainer.innerHTML = "<strong>No players found.</strong>";
+      }
+
+      userArray.forEach((user) => {
+        const html = `
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="row row-0">
+                <div class="col-1">
+                  <img src="${user.icon}" class="w-100 h-100 object-scale-down card-img-start" alt="Player Icon" />
+                </div>
+                <div class="col">
+                  <div class="card-body">
+                    ${user.playername}
+                    <p style="margin-top:0px;" class="text-muted">Lvl. ${user.level}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        const div = document.createElement('div');
+        searchContainer.innerHTML += html;
+      });
+
+      var cardImages = document.getElementsByClassName('card-img-start');
+
+      for (var i = 0; i < cardImages.length; i++) {
+        var image = cardImages[i];
+        var height = image.offsetHeight;
+        image.style.width = height + 'px';
+      }
+    });
+
+    socket.on('websiteStaticsM', (main) => {
+      document.getElementById("version").innerText = main[0]
+      for (const xv in main[1]) {
+      document.getElementById('globalcontainer').innerHTML += "<br>"+main[1][xv];
+      }
+      document.getElementById('globalcontainer').innerHTML += "<br><br><p style='text-align:center;color:yellow;margin-bottom:0;'>Welcome to the chat!</p>";
+      document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+    });
+
+    socket.emit("requestChat","__global__")
+
+    socket.on('grabStaticsResult', (allowed,onl) => {
+      if (onl == 0) {
+        document.getElementById("loadingtext").innerText = allowed
+        alertify.error(allowed,5000);
+      }
+      loadPlayer = allowed;
+
+      if (! loadPlayer.account.dataint.badges.includes("beta")) {
+        history.back();
+        window.location.href = "/";
+      }
+
+      if (loadPlayer.account.status == -1) {
+        document.getElementById("loadingtext").innerText = "You are banned from Birded."
+        alertify.error("You have been permanently banned from Birded.",20000);
+        alertify.error("Please contact official@birded.tech if you have questions or concerns regarding your ban.",20500);
+        loadPlayer = ""
+      } else if (loadPlayer.account.status == -2) {
+        document.getElementById("gmessageinput").disabled = true;
+        document.getElementById("gcb1").disabled = true;
+        document.getElementById("gcb1a").style.backgroundColor = "#f8f4fc";
+        document.getElementById("gcb2").disabled = true;
+        document.getElementById("gcb3").disabled = true;
+        document.getElementById("gmessageinput").value = "You have been muted!";
+      }
+
+      document.getElementById("playername_holder").innerText = loadPlayer.account.playername;
+      if (loadPlayer.account.icon == "none") {
+        document.getElementById("playerimage_holder").style.backgroundImage = "url('/game/static/avatars/avatar.png')"
+      } else {
+        document.getElementById("playerimage_holder").style.backgroundImage = "url('" + loadPlayer.account.icon + "')"
+      }
+      if (loadPlayer.account.op == 3) {
+        document.getElementById("adminbutton").classList.remove("hiddenelem");
+        document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#EB3838;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">DEVELOPER</div>`;
+      } else if (loadPlayer.account.op == 2) {
+        document.getElementById("adminbutton").classList.remove("hiddenelem");
+        document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#E87676;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">ADMIN</div>`;
+      } else if (loadPlayer.account.op == 1) {
+        document.getElementById("adminbutton").classList.remove("hiddenelem");
+        document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#C98FDE;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">MOD</div>`;
+      } else if (loadPlayer.game.rank == 3) {
+        document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#F2B236;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">CLAW</div>`;
+      } else if (loadPlayer.game.rank == 2) {
+        document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#E5C53F;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">TALON</div>`;
+      } else if (loadPlayer.game.rank == 1) {
+        document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#D1D567;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">FEATHER</div>`;
+      } else if (loadPlayer.game.rank == 0) {
+        document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:gray;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">PLAYER</div>`
+      }
+
+
+      document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+      document.getElementById("overlayi").remove();
+      var mcobj = document.getElementById("unblurobj")
+      mcobj.classList.add("unblurtype");
+      var verifyalert = `
+
+                    <header class="navbar navbar-expand-md navbar-dark bg-red d-print-none">
+                      <div class="container-xl">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbar-menu">
+                          <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
+                            <ul class="navbar-nav">    
+                              <li class="nav-item">
+                                <a class="nav-link disabled" href="index.html#" >
+                                  <span class="nav-link-title">
+                                    <strong style="color:white;">Please verify your email address to lift account restrictions!</strong>
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/game/settings/account" >
+                                  <span class="nav-link-title">
+                                    Request new verification
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </header>
+
+    `
+      if (loadPlayer.account.verification.v == 0) {
+        document.getElementById("alertbar").innerHTML = verifyalert
+        document.getElementById("gmessageinput").disabled = true;
+        document.getElementById("gcb1").disabled = true;
+        document.getElementById("gcb1a").style.backgroundColor = "#f8f4fc";
+        document.getElementById("gcb2").disabled = true;
+        document.getElementById("gcb3").disabled = true;
+        document.getElementById("gmessageinput").value = "Please verify your account before chatting!";
+      }
+
+    });
+
+
+
+    var searchInput = document.getElementById("usersearchbar");
+    var timeoutId;
+
+    searchInput.addEventListener("input", function() {
+      var searchText = searchInput.value;
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(function() {
+        if (searchText == "{*}" && loadPlayer.account.op > 0) {
+          socket.emit("userPublicSearch", "");
+        } else if (searchText == "{*}^a" && loadPlayer.account.op > 2) {
+          socket.emit("userPublicSearch", "",true);
+        } else if (searchText.length > 2) {
+          socket.emit("userPublicSearch", searchText);
+        } else if (searchText.length > 0) {
+          document.getElementById('searchcontainer').innerHTML = "<strong>Enter at least 3 characters!</strong>";
+        } else {
+          document.getElementById('searchcontainer').innerHTML = "";
+        }
+      }, 500);
+    });
+
+    const inputElement = document.getElementById("gmessageinput");
+
+    // Function to be executed when the input is modified
+    function handleInputChange() {
+      // Code to run when the input is modified
+      inputElement.value = emojify(inputElement.value);
+      // You can perform any additional actions or call other functions here
+    }
+
+    // Add the event listener to the input element
+    inputElement.addEventListener("input", handleInputChange);
+
+
+    // Code below here is responsible for message verification.
+
+    socket.on('delocalizeGlobalsend', (contents,patch, tack) => {
+      thisx = document.querySelector(`[sid="${patch}"]`);
+      thisx.setAttribute('prop', 'SERVER');
+      thisx.innerHTML = contents
+      if (tack == 1) {
+        alertify.error("Please don't use profanity in public chats!")
+      }
+    });
+
+    socket.on('recieveGlobalsend', (contents) => {
+      document.getElementById('globalcontainer').innerHTML += "<br>"+contents;
+      document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+    });
+
+    function expt(m, patch) {
+      if (loadPlayer.account.op == 3) {
+        mname = "#EB3838"
+      } else if (loadPlayer.account.op == 2) {
+        mname = "#E87676"
+      } else if (loadPlayer.account.op == 1) {
+        mname = "#C98FDE"
+      } else if (loadPlayer.game.rank == 3) {
+        mname = "#F2B236"
+      } else if (loadPlayer.game.rank == 2) {
+        mname = "#E5C53F"
+      } else if (loadPlayer.game.rank == 1) {
+        mname = "#D1D567"
+      } else {
+        mname = "#969696"
+      }
+      tyamp = getLevel(loadPlayer.game.exp)
+      if (tyamp <=19) {
+        mlvl = "#7F7F7F"
+      } else if (tyamp <=39) {
+        mlvl = "#FFFFFF"
+      } else if (tyamp <=59) {
+        mlvl = "#FFFF49"
+      } else if (tyamp <=79) {
+        mlvl = "#B6E565"
+      } else if (tyamp <=99) {
+        mlvl = "#4A87FF"
+      } else if (tyamp <=119) {
+        mlvl = "#AC49FF"
+      } else if (tyamp <=139) {
+        mlvl = "#EEA300"
+      } else if (tyamp <=159) {
+        mlvl = "#63E1FF"
+      } else if (tyamp <=179) {
+        mlvl = "#FF79C2"
+      } else if (tyamp <=199) {
+        mlvl = "#FF5B5B"
+      } else {
+        mlvl = "#AC0000"
+      }
+      xm= `<idx prop="CLIENT" sid=${patch}>[<cbox style='color:${mlvl};'>${tyamp}</cbox>] <cbox style='color:${mname};'>${loadPlayer.account.playername}</cbox>: ${m}</idx>`
+      return xm
+
+
+    }
+
+      function manualexpt(m, patch, name, rank, op, level) {
+        if (op == 3) {
+          mname = "#EB3838"
+        } else if (op == 2) {
+          mname = "#E87676"
+        } else if (op == 1) {
+          mname = "#C98FDE"
+        } else if (rank == 3) {
+          mname = "#F2B236"
+        } else if (rank == 2) {
+          mname = "#E5C53F"
+        } else if (rank == 1) {
+          mname = "#D1D567"
+        } else {
+          mname = "#969696"
+        }
+        tyamp = level
+        if (tyamp <=19) {
+          mlvl = "#7F7F7F"
+        } else if (tyamp <=39) {
+          mlvl = "#FFFFFF"
+        } else if (tyamp <=59) {
+          mlvl = "#FFFF49"
+        } else if (tyamp <=79) {
+          mlvl = "#B6E565"
+        } else if (tyamp <=99) {
+          mlvl = "#4A87FF"
+        } else if (tyamp <=119) {
+          mlvl = "#AC49FF"
+        } else if (tyamp <=139) {
+          mlvl = "#EEA300"
+        } else if (tyamp <=159) {
+          mlvl = "#63E1FF"
+        } else if (tyamp <=179) {
+          mlvl = "#FF79C2"
+        } else if (tyamp <=199) {
+          mlvl = "#FF5B5B"
+        } else {
+          mlvl = "#AC0000"
+        }
+        xm= `<idx prop="CLIENT" sid=${patch}>[<cbox style='color:${mlvl};'>${tyamp}</cbox>] <cbox style='color:${mname};'>${name}</cbox>: ${m}</idx>`
+        return xm
+
+
+      }
+
+
+    batches = []
+
+    function sendg() {
+      msgdata = inputElement.value
+      inputElement.value = ""
+
+      if (msgdata.startsWith("//")) {
+
+        if (msgdata == "//colors") {
+
+          bufferGlobalMessage("level-001",'hello!',0,0,1)
+          bufferGlobalMessage("level-020",'hello!',0,0,20)
+          bufferGlobalMessage("level-040",'hello!',0,0,40)
+          bufferGlobalMessage("level-060",'hello!',0,0,60)
+          bufferGlobalMessage("level-080",'hello!',0,0,80)
+          bufferGlobalMessage("level-100",'hello!',0,0,100)
+          bufferGlobalMessage("level-120",'hello!',0,0,120)
+          bufferGlobalMessage("level-140",'hello!',0,0,140)
+          bufferGlobalMessage("level-160",'hello!',0,0,160)
+          bufferGlobalMessage("level-180",'hello!',0,0,180)
+          bufferGlobalMessage("level-200",'hello!',0,0,200)
+
+          bufferGlobalMessage("rank--001",'hello!',1,0,0)
+          bufferGlobalMessage("rank--002",'hello!',2,0,0)
+          bufferGlobalMessage("rank--003",'hello!',3,0,0)
+          bufferGlobalMessage("op----001",'hello!',0,1,0)
+          bufferGlobalMessage("op----002",'hello!',0,2,0)
+          bufferGlobalMessage("op----003",'hello!',0,3,0)
+
+        } else if (msgdata == "//alert") {
+
+        } else if (msgdata == "//clear") {
+
+          socket.emit("globalclear");
+
+        } else {
+          alertify.error("Unknown command.");
+        }
+        return false;
+      }
+
+      var count = 0
+      for (const thisx of batches) {
+        if ((Date.now()-thisx) <= 10000) {count+=1}
+      }
+      if (count >= 4 && loadPlayer.account.op <=1) {
+        alertify.error("Please do not spam!");
+        return false;
+      }
+      if (msgdata.trim() == "") {
+        alertify.error("Message cannot be blank!");
+        return false;
+      }
+      batches.push(Date.now());
+      patch = Math.floor(Math.random() * 999999999999);
+      ppd = expt(msgdata, patch);
+      document.getElementById('globalcontainer').innerHTML += "<br>"+ppd;
+      document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+      socket.emit("globalsend", msgdata,patch,loadPlayer);
+
+    }
+
+      function bufferGlobalMessage(name,msgdata,rank,op,level) {
+
+        var count = 0;
+        for (const thisx of batches) {
+          if ((Date.now()-thisx) <= 10000) {count+=1}
+        }
+        batches.push(Date.now());
+        patch = Math.floor(Math.random() * 999999999999);
+        ppd = manualexpt(msgdata, patch, name, rank, op, level);
+        document.getElementById('globalcontainer').innerHTML += "<br>"+ppd;
+        document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+        socket.emit("globalsendbuffer", msgdata,patch,name,rank,op,level);
+
+      }
+
+    inputElement.addEventListener("keydown", function (e) {
+        if (e.code === "Enter") {  
+            sendg();
         }
     });
-}
-
-function openProfile() {
-  window.location.href = "/game/profile/" + loadPlayer.account.playername
-}
-  
-
-// ------------------------------------------ //
-
-const x = getCookie('session_id');
-const y = getCookie('access_id');
-var grant = 1
-
-alertify.set({ delay: 1700 });
-
-const codes = "14708605"
-
-function chk() {
-  if (codes.split(",").indexOf(y) !== -1) {
-    
-      grant = 1;
-    
-  }
-}
-
-  chk()
-
-function logoutF() {
-  eraseCookie('session_id')
-  eraseCookie('access_id')
-  window.location.href = "/login"
-}
 
 
 
-socket.emit("verifyId", x);
 
-socket.on('verifyIdResult', (allowed) => {
-  if (allowed == 1) {
-    //alertify.info("Logged In!",1000);
-    socket.emit("grabStatics", x,"0");
-  } else {
-    eraseCookie(y)
-    window.location.href = "/login";
-  }
-});
-
-socket.on('websiteStatics', (main) => {
-  document.getElementById("version").innerText = main[0]
-});
-
-socket.on('grabStaticsResult', (allowed,onl) => {
-  if (onl == 0) {
-    document.getElementById("loadingtext").innerText = allowed
-    alertify.error(allowed,5000);
-  }
-  loadPlayer = allowed;
-
-  if (loadPlayer.account.status == -1) {
-    document.getElementById("loadingtext").innerText = "You are banned from Birded."
-    alertify.error("You have been permanently banned from Birded.",20000);
-    alertify.error("Please contact official@birded.tech if you have questions or concerns regarding your ban.",20500);
-    loadPlayer = ""
-  }
-  
-  document.getElementById("playername_holder").innerText = loadPlayer.account.playername;
-  if (loadPlayer.account.icon == "none") {
-    document.getElementById("playerimage_holder").style.backgroundImage = "url('/game/static/avatars/avatar.png')"
-  } else {
-    document.getElementById("playerimage_holder").style.backgroundImage = "url('" + loadPlayer.account.icon + "')"
-  }
-  if (loadPlayer.account.op == 3) {
-    document.getElementById("adminbutton").classList.remove("hiddenelem");
-    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#EB3838;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">DEVELOPER</div>`;
-  } else if (loadPlayer.account.op == 2) {
-    document.getElementById("adminbutton").classList.remove("hiddenelem");
-    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#E87676;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">ADMIN</div>`;
-  } else if (loadPlayer.account.op == 1) {
-    document.getElementById("adminbutton").classList.remove("hiddenelem");
-    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#C98FDE;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">MOD</div>`;
-  } else if (loadPlayer.game.rank == 3) {
-    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#F2B236;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">CLAW</div>`;
-  } else if (loadPlayer.game.rank == 2) {
-    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#E5C53F;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">TALON</div>`;
-  } else if (loadPlayer.game.rank == 1) {
-    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:#D1D567;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">FEATHER</div>`;
-  } else if (loadPlayer.game.rank == 0) {
-    document.getElementById("userblocki").innerHTML += `<div class="mt-1 small" style="background:gray;color:white;padding:1px;font-size:0.6em;border-radius:3px;text-align:center;">PLAYER</div>`
-  }
-  document.getElementById("overlayi").remove();
-  var mcobj = document.getElementById("unblurobj")
-  mcobj.classList.add("unblurtype");
-});
-</script>
+    </script>
   </body>
 </html>

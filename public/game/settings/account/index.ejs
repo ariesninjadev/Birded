@@ -313,6 +313,10 @@ socket.on('changeEmailResult', (uid,approved) => {
   }
 
   socket.on('postAvatarResult', (allowed) => {
+  if (!allowed) {
+    alertify.error("Image too large!");
+    return false;
+  }
   location.reload();
 });
 

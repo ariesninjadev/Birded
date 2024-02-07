@@ -23,9 +23,13 @@ const imageData = img.split(',')[1];
       key: apiKey,
     },
   };
-  
+
+  try {
   const response = await axios.post('https://api.imgbb.com/1/upload', form, config);
   return [response.data.data.thumb.url,response.data.data.delete_url];
+  } catch {
+    return false;
+  }
 
 }
 

@@ -91,6 +91,14 @@
     <div class="row g-0 flex-fill">
       <div class="col-12 col-lg-6 col-xl-4 border-top-wide border-primary d-flex flex-column justify-content-center">
         <div class="container container-tight my-5 px-lg-5">
+          <!--<div class="col-md-6 col-lg-3" style="width:100%;vertical-align:top;">
+                <div class="card card-active2">
+                  <div class="card-body">
+                    <p>Birded is currently offline while we upgrade server software!</p>
+                  </div>
+                </div>
+              </div>-->
+          <br><br>
           <div class="text-center mb-4 racanim">
             <a class="navbar-brand navbar-brand-autodark"><img src="/game/static/logo.png" height="36" alt=""></a>
           </div>
@@ -100,19 +108,19 @@
           <form id="regform" novalidate>
             <div class="mb-3">
               <label class="form-label">Username</label>
-              <input id="luser" type="email" class="form-control inputboxjs" placeholder="Enter username" autocomplete="off">
+              <input id="luser" type="email" class="form-control inputboxjs" placeholder="Enter username" autocomplete="off" tabindex="0">
             </div>
             <div class="mb-2">
               <label class="form-label">
                 Password
                 <span class="form-label-description">
-                  <a href="#">I forgot password</a>
+                  <a href="#"  tabindex="-1">I forgot password</a>
                 </span>
               </label>
-              <div class="input-group input-group-flat">
+              <div tabindex="1" class="input-group input-group-flat">
                 <input id="lpass" type="password" class="form-control inputboxjs"  placeholder="Password"  autocomplete="off">
                 <span class="input-group-text">
-                  <a href="#" class="link-secondary toggle-password" title="Toggle password visibility" data-bs-toggle="tooltip">
+                  <ahref="#" class="link-secondary toggle-password" title="Toggle password visibility" data-bs-toggle="tooltip">
         <svg xmlns="http://www.w3.org/2000/svg" class="eye-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
         </svg>
@@ -243,23 +251,34 @@ if (regform.attachEvent) {
   regform.addEventListener("submit", processSignin);
 }
 
-(function() {
-  $('.inputboxjs, input[type="checkbox"]').on('keyup change', function() {
-    var empty = false;
+      (function() {
+        // Function to check for empty fields and enable/disable the submit button
+        function checkFields() {
+          var empty = false;
 
-    $('.inputboxjs').each(function() {
-      if ($(this).val() === '') {
-        empty = true;
-      }
-    });
+          $('.inputboxjs').each(function() {
+            if ($(this).val() === '') {
+              empty = true;
+            }
+          });
 
-    if (empty) {
-      $('#submitbtn').addClass('disabledbtn');
-    } else {
-      $('#submitbtn').removeClass('disabledbtn');
-    }
-  });
-})();
+          if (empty) {
+            $('#submitbtn').addClass('disabledbtn');
+          } else {
+            $('#submitbtn').removeClass('disabledbtn');
+          }
+        }
+
+        // Attach the event handlers for keyup, change, and input events
+        $('.inputboxjs, input[type="checkbox"]').on('keyup change input', function() {
+          // Delay the execution to allow time for autofill changes
+          setTimeout(checkFields, 100);
+        });
+
+        // Check fields initially in case of autofill on page load
+        checkFields();
+      })();
+
     </script>
   </body>
 </html>

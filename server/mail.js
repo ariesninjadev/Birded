@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 // Email address that sends the emails
-const from = 'official@birded.tech';
+const from = 'Birded <official@birded.tech>';
 
 function sendVerification(mailTo,userCode,id,username) {
   
@@ -17,7 +17,7 @@ function sendVerification(mailTo,userCode,id,username) {
   port: 587,
   auth: {
     user: 'aries.powvalla@gmail.com',
-    pass: 'krqednqusfqawwnl',
+    pass: 'daao ypmd sudr malm',
   },
 });
   

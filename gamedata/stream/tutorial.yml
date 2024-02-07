@@ -1,0 +1,111 @@
+a:
+  a1:
+    - type: disable
+    - type: thought
+      text: "Bird..."
+      speed: 1
+    - type: delay
+      speed: 1.5
+    - type: thought
+      text: "Birds..."
+      speed: 1
+    - type: delay
+      speed: 1.5
+    - type: thought
+      text: "Birds??"
+      speed: 0.4
+    - type: delay
+      speed: 1.5
+    - type: desc
+      text: "You see hundreds of birds flying above your head, some of which appear oddly peculiar…"
+      speed: 3
+    - type: delay
+      speed: 3
+    - type: desc
+      text: "Suddenly, a man walks into view and gives you his hand. You are confused at first, but then you realize that you are flat on your back, as if you fell over. But you don’t remember anything. This all appears new to you."
+      speed: 8
+    - type: thought
+      text: "Perhaps something happened…"
+      speed: 1.3
+    - type: delay
+      speed: 1
+    - type: desc
+      text: "You feel as if you’ve aged without aging, grown without growing, seen without seeing."
+      speed: 3
+    - type: delay
+      speed: 2
+    - type: desc
+      text: "The man yells at you."
+      speed: 0.5
+      effects:
+        screenshake: 0.3
+    - type: delay
+      speed: 2
+    - type: hint
+      text: "( Sometimes during dialogue, you will be prompted with multiple options. Luckily for you, there are lots of ways to pick things. You can choose one by typing “choose 1” or “2”, or “a” or “choose b”, or even typing out the whole prompt if you really wanted to. )"
+    - type: delay
+      speed: 2
+    - type: disable
+    - type: prompt
+      text: "What will you do next?"
+      speed: 1
+      responses:
+        - text: "Grab the man's hand"
+          action: switch
+          detail: a2
+        - text: "Lay there a while longer"
+          action: switch
+          detail: a2-pre
+    - type: close
+      action: error
+      detail: staticend
+  a2-pre:
+    - type: disable
+    - type: dialogue
+      text: "What are you doing?"
+      speed: 1
+      name: "???"
+    - type: delay
+      speed: 1
+    - type: desc
+      text: "You're very tired, but you feel like you're in danger. You gather your energy and reach out for his hand."
+      speed: 4
+    - type: close
+      action: switch
+      detail: a2
+  a2:
+    - type: disable
+    - type: dialogue
+      text: "There we go. Took you long enough. In fact…"
+      speed: 3
+      name: "???"
+    - type: delay
+      speed: 0.7
+    - type: desc
+      text: "The man pulls out something… you aren’t quite sure what it is. It is round and is made of metal. Perhaps it keeps track of time. You decide to name it yourself, and you settle upon the name \"Pocket watch\"."
+      speed: 9
+    - type: delay
+      speed: 1
+    - type: dialogue
+      text: "Three and a half Pezoras??"
+      speed: 2
+      name: "???"
+    - type: delay
+      speed: 1
+    - type: desc
+      text: "Suddenly you are even more confused. What on earth is a Pezora?"
+      speed: 3
+      terms:
+       - start: 56
+         end: 61
+         variant: new
+    - type: dialogue
+      text: "Oh well... I presume the best thing I can do for you is explain how to survive in this… mess."
+      speed: 4
+      name: "???"
+    - type: delay
+      speed: 1
+    - type: dialogue
+      text: "Oh well... I presume the best thing I can do for you is explain how to survive in this… mess."
+      speed: 4
+      name: "???"

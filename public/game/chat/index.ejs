@@ -462,39 +462,137 @@ function expt(m, patch) {
   
 }
 
+  function manualexpt(m, patch, name, rank, op, level) {
+    if (op == 3) {
+      mname = "#EB3838"
+    } else if (op == 2) {
+      mname = "#E87676"
+    } else if (op == 1) {
+      mname = "#C98FDE"
+    } else if (rank == 3) {
+      mname = "#F2B236"
+    } else if (rank == 2) {
+      mname = "#E5C53F"
+    } else if (rank == 1) {
+      mname = "#D1D567"
+    } else {
+      mname = "#969696"
+    }
+    tyamp = level
+    if (tyamp <=19) {
+      mlvl = "#7F7F7F"
+    } else if (tyamp <=39) {
+      mlvl = "#FFFFFF"
+    } else if (tyamp <=59) {
+      mlvl = "#FFFF49"
+    } else if (tyamp <=79) {
+      mlvl = "#B6E565"
+    } else if (tyamp <=99) {
+      mlvl = "#4A87FF"
+    } else if (tyamp <=119) {
+      mlvl = "#AC49FF"
+    } else if (tyamp <=139) {
+      mlvl = "#EEA300"
+    } else if (tyamp <=159) {
+      mlvl = "#63E1FF"
+    } else if (tyamp <=179) {
+      mlvl = "#FF79C2"
+    } else if (tyamp <=199) {
+      mlvl = "#FF5B5B"
+    } else {
+      mlvl = "#AC0000"
+    }
+    xm= `<idx prop="CLIENT" sid=${patch}>[<cbox style='color:${mlvl};'>${tyamp}</cbox>] <cbox style='color:${mname};'>${name}</cbox>: ${m}</idx>`
+    return xm
+
+
+  }
+
 
 batches = []
 
 function sendg() {
   msgdata = inputElement.value
+  inputElement.value = ""
+
+  if (msgdata.startsWith("//")) {
+
+    if (msgdata == "//colors") {
+
+      bufferGlobalMessage("level-001",'hello!',0,0,1)
+      bufferGlobalMessage("level-020",'hello!',0,0,20)
+      bufferGlobalMessage("level-040",'hello!',0,0,40)
+      bufferGlobalMessage("level-060",'hello!',0,0,60)
+      bufferGlobalMessage("level-080",'hello!',0,0,80)
+      bufferGlobalMessage("level-100",'hello!',0,0,100)
+      bufferGlobalMessage("level-120",'hello!',0,0,120)
+      bufferGlobalMessage("level-140",'hello!',0,0,140)
+      bufferGlobalMessage("level-160",'hello!',0,0,160)
+      bufferGlobalMessage("level-180",'hello!',0,0,180)
+      bufferGlobalMessage("level-200",'hello!',0,0,200)
+
+      bufferGlobalMessage("rank--001",'hello!',1,0,0)
+      bufferGlobalMessage("rank--002",'hello!',2,0,0)
+      bufferGlobalMessage("rank--003",'hello!',3,0,0)
+      bufferGlobalMessage("op----001",'hello!',0,1,0)
+      bufferGlobalMessage("op----002",'hello!',0,2,0)
+      bufferGlobalMessage("op----003",'hello!',0,3,0)
+      
+    } else if (msgdata == "//alert") {
+      
+    } else if (msgdata == "//clear") {
+
+      socket.emit("globalclear");
+
+    } else {
+      alertify.error("Unknown command.");
+    }
+    return false;
+  }
 
   var count = 0
   for (const thisx of batches) {
     if ((Date.now()-thisx) <= 10000) {count+=1}
   }
   if (count >= 4 && loadPlayer.account.op <=1) {
-    alertify.error("Please do not spam!")
-    return false
+    alertify.error("Please do not spam!");
+    return false;
   }
-  inputElement.value = ""
   if (msgdata.trim() == "") {
-    alertify.error("Message cannot be blank!")
-    return false
+    alertify.error("Message cannot be blank!");
+    return false;
   }
-  batches.push(Date.now())
-  patch = Math.floor(Math.random() * 999999999999)
-  ppd = expt(msgdata, patch)
+  batches.push(Date.now());
+  patch = Math.floor(Math.random() * 999999999999);
+  ppd = expt(msgdata, patch);
   document.getElementById('globalcontainer').innerHTML += "<br>"+ppd;
   document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
-  socket.emit("globalsend", msgdata,patch,loadPlayer)
+  socket.emit("globalsend", msgdata,patch,loadPlayer);
 
 }
+
+  function bufferGlobalMessage(name,msgdata,rank,op,level) {
+
+    var count = 0;
+    for (const thisx of batches) {
+      if ((Date.now()-thisx) <= 10000) {count+=1}
+    }
+    batches.push(Date.now());
+    patch = Math.floor(Math.random() * 999999999999);
+    ppd = manualexpt(msgdata, patch, name, rank, op, level);
+    document.getElementById('globalcontainer').innerHTML += "<br>"+ppd;
+    document.getElementById('globalcontainer').scrollTop = document.getElementById('globalcontainer').scrollHeight;
+    socket.emit("globalsendbuffer", msgdata,patch,name,rank,op,level);
+
+  }
 
 inputElement.addEventListener("keydown", function (e) {
     if (e.code === "Enter") {  
         sendg();
     }
 });
+
+  
 
 
 </script>

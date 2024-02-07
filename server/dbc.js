@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 // Connect to remote MongoDB database
 
+
 mongoose.set('strictQuery', true)
 mongoose.connect(process.env['dburi'], { useNewUrlParser: true });
 
@@ -22,13 +23,11 @@ const playerSchema = new mongoose.Schema({
     icon: { type: String, required: true },
     settings: {
       public: { type: Number, required: true, enum: [0, 1] },
-      friends: { type: Number, required: true, enum: [0, 1] },
-      party: { type: Number, required: true, enum: [0, 1] },
-      autocomplete: { type: Number, required: true, enum: [0, 1] }
+      options: { required: false }
     },
     sig: { type: String, required: true },
     dataint: {
-      delicon: { type: String, required: true }
+      badges: { type: String, required: true }
     },
     globalsession: { type: String, required: true }
   },
@@ -37,48 +36,8 @@ const playerSchema = new mongoose.Schema({
     exp: { type: Number, required: true, min: 0 },
     bal: { type: Number, required: true, min: 0 },
     gems: { type: Number, required: true, min: 0 },
-    faction: { type: String, required: false },
-    metadata: { required: false },
-    equipped: {
-      abilities: {
-        type: [[Number]],
-        required: false
-      },
-      armor: {
-        helm: {
-          type: [Number],
-          required: false
-        },
-        chpl: {
-          type: [Number],
-          required: false
-        },
-        legg: {
-          type: [Number],
-          required: false
-        },
-        boot: {
-          type: [Number],
-          required: false
-        }
-      }
-    },
-    inventory: {
-      type: [[Number]],
-      required: false
-    },
-    birds: {
-      type: [[Number]],
-      required: false
-    },
-    progress: {
-      type: [[String]],
-      required: false
-    },
-    friends: {
-      type: [[String]],
-      required: false
-    }
+    gamedata: { required: false },
+    friends: { required: false }
   }
 },{ collection: 'players' });
 
@@ -114,13 +73,11 @@ function registerUser(email, user, pwdh, codeI, idI) {
       icon: "none",
       settings: {
         public: 1,
-        friends: 1,
-        party: 1,
-        autocomplete: 1
+        options: {}
       },
       sig: " ",
       dataint: {
-        delicon: "none" 
+        badges: "none" 
       },
       globalsession: " "
     },
@@ -129,16 +86,8 @@ function registerUser(email, user, pwdh, codeI, idI) {
       exp: 0,
       bal: 0,
       gems: 0,
-      faction: "",
-      metadata: {},
-      equipped: {
-        abilities: [],
-        armor: {}
-      },
-      inventory: [],
-      birds: [],
-      progress: [],
-      friends: []
+      gamedata: {},
+      friends: {}
     }
   });
 
@@ -337,16 +286,42 @@ async function postChat(content,location) {
   }
 }
 
-async function requestChat(location) {
+async function clearChat(location) {
   try {
-    const result = await ChatData.findOne({ "identifier": location });
-    if (!result) return false;  
-    return result.nongame.recentchat;
+    const valuesToAdd = Array(50).fill("<x></x>");
+
+    const result = await ChatData.updateOne(
+      { "identifier": location },
+      {
+        $push: {
+          "nongame.recentchat": { $each: valuesToAdd }
+        },
+      });
+
+    return result;
+
   } catch (err) {
     console.error(err);
     return false;
   }
 }
+
+async function requestChat(location) {
+  try {
+    const result = await ChatData.findOne({ "identifier": location });
+    if (!result) return false;
+
+    const recentchat = result.nongame.recentchat;
+    // Use slice to get the last 50 values of the array
+    const last50Values = recentchat.slice(-50);
+
+    return last50Values;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
 
 async function userPublicSearch(content,c) {
   try {
@@ -523,4 +498,5 @@ Player.findByIdAndDelete('<player_id>', (error) => {
 */
 console.log("Thread > DB Connected on MAIN")
 
-module.exports = { registerUser, chkUsername, chkEmail, chkUsernameL, chkPasswordL, chkPasswordL2, chkVerifyHash, idToCode, sendVerify, vid, reqstat, postAvatar, generalData, changePassword, changeEmail, idToName, loadProfile, userPublicSearch, postChat, requestChat }
+module.exports = { registerUser, chkUsername, chkEmail, chkUsernameL, chkPasswordL, chkPasswordL2, chkVerifyHash, idToCode, sendVerify, vid, reqstat, postAvatar, generalData, changePassword, changeEmail, idToName, loadProfile, userPublicSearch, postChat, requestChat, clearChat }
+
