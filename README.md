@@ -1,5 +1,5 @@
 
-![Logo](https://cdn.discordapp.com/attachments/1101301422009614356/1122722111014834206/favi.png)
+![Logo]([https://cdn.discordapp.com/attachments/1101301422009614356/1122722111014834206/favi.png](https://media.discordapp.net/attachments/1038523709893398631/1079622923716927521/thumb-alt.png?ex=65ee8a33&is=65dc1533&hm=02970220d507e9282a38fa3828bd0b6bd379008b056262a2097477728314114e&=&format=webp&quality=lossless&width=920&height=455))
 
 
 # Birded
