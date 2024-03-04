@@ -1,8 +1,9 @@
+<p align="center">
+  <img src="https://i.ibb.co/jZhhs4b/thumb-alt.png" />
+</p>
 
-![Logo](https://i.ibb.co/jZhhs4b/thumb-alt.png)
 
-
-# Birded
+---
 
 Birded is a web game produced by Ninjam Studios releasing in 2024.
 
